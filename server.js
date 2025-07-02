@@ -14,12 +14,12 @@ const PORT = process.env.PORT || 3000;
 
 // Security middleware
 app.use(cors({
-    origin: process.env.ALLOWED_ORIGINS?.split(',') || ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8080'],
+    origin: true, // Allow all origins for now
     credentials: true
 }));
 
 app.use(express.json({ limit: '50mb' }));
-app.use(express.static('public')); // Serve static files if you have them
+app.use(express.static('public'));
 
 // Serve the HTML file at the root
 app.get('/', (req, res) => {
@@ -38,7 +38,6 @@ const storage = multer.diskStorage({
         cb(null, TEMP_DIR);
     },
     filename: (req, file, cb) => {
-        // Generate secure random filename
         const uniqueId = crypto.randomUUID();
         const timestamp = Date.now();
         const ext = path.extname(file.originalname);
@@ -80,25 +79,6 @@ function cleanupTempFile(filePath) {
     }
 }
 
-// Scheduled cleanup of old temp files (older than 1 hour)
-setInterval(() => {
-    try {
-        const files = fs.readdirSync(TEMP_DIR);
-        const oneHourAgo = Date.now() - (60 * 60 * 1000);
-        
-        files.forEach(file => {
-            const filePath = path.join(TEMP_DIR, file);
-            const stats = fs.statSync(filePath);
-            
-            if (stats.mtime.getTime() < oneHourAgo) {
-                cleanupTempFile(filePath);
-            }
-        });
-    } catch (error) {
-        console.error('Error during scheduled cleanup:', error.message);
-    }
-}, 15 * 60 * 1000); // Run every 15 minutes
-
 // Health check endpoint
 app.get('/api/health', (req, res) => {
     res.json({ 
@@ -126,7 +106,7 @@ app.post('/api/transcribe', upload.single('audio'), async (req, res) => {
             throw new Error('OpenAI API key not configured in .env file');
         }
 
-        // Prepare form data for OpenAI Whisper API
+        // Use built-in FormData and fetch (Node.js 18+)
         const FormData = require('form-data');
         const formData = new FormData();
         
@@ -134,8 +114,9 @@ app.post('/api/transcribe', upload.single('audio'), async (req, res) => {
         formData.append('model', 'whisper-1');
         formData.append('response_format', 'json');
 
-        // Call OpenAI Whisper API
-        const fetch = require('node-fetch');
+        console.log('📡 Calling OpenAI Whisper API...');
+
+        // Use built-in fetch (available in Node.js 18+)
         const response = await fetch('https://api.openai.com/v1/audio/transcriptions', {
             method: 'POST',
             headers: {
@@ -153,8 +134,8 @@ app.post('/api/transcribe', upload.single('audio'), async (req, res) => {
 
         const transcriptionResult = await response.json();
         
-        // Log success (without sensitive data)
         console.log(`✅ Transcription completed successfully for file: ${req.file.filename}`);
+        console.log(`📝 Transcription preview: ${transcriptionResult.text.substring(0, 100)}...`);
         
         res.json({
             transcription: transcriptionResult.text,
@@ -164,6 +145,7 @@ app.post('/api/transcribe', upload.single('audio'), async (req, res) => {
 
     } catch (error) {
         console.error('❌ Transcription error:', error.message);
+        console.error('❌ Full error:', error);
         res.status(500).json({ 
             error: 'Failed to transcribe audio',
             details: error.message 
@@ -199,8 +181,7 @@ Transcription: "${transcription}"
 
 Please provide a comprehensive SOAP note based on the medical information in the transcription. If any section lacks information from the transcription, note that appropriately.`;
 
-        // Call OpenAI GPT API
-        const fetch = require('node-fetch');
+        // Use built-in fetch for OpenAI GPT API
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
             headers: {
@@ -313,20 +294,6 @@ app.use((error, req, res, next) => {
     
     console.error('❌ Server error:', error);
     res.status(500).json({ error: 'Internal server error' });
-});
-
-// Graceful shutdown
-process.on('SIGTERM', () => {
-    console.log('🧹 Cleaning up temp files before shutdown...');
-    try {
-        const files = fs.readdirSync(TEMP_DIR);
-        files.forEach(file => {
-            cleanupTempFile(path.join(TEMP_DIR, file));
-        });
-    } catch (error) {
-        console.error('Error during cleanup:', error.message);
-    }
-    process.exit(0);
 });
 
 // Start server
