@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartMind - Medical SOAP Notes</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; padding: 20px;
+        }
+        .container {
+            max-width: 1200px; margin: 0 auto; display: grid;
+            grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-radius: 20px; padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 {
+            color: #2d3748; font-size: 2.5rem; font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .upload-area {
+            border: 3px dashed #cbd5e0; border-radius: 15px;
+            padding: 40px 20px; text-align: center; background: #f7fafc;
+            cursor: pointer; transition: all 0.3s ease;
+        }
+        .upload-area:hover { border-color: #667eea; background: #edf2f7; }
+        .file-input { display: none; }
+        .generate-btn {
+            width: 100%; background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white; border: none; padding: 15px 30px;
+            border-radius: 12px; font-size: 1.1rem; cursor: pointer;
+            margin-top: 20px;
+        }
+        .generate-btn:disabled { background: #cbd5e0; cursor: not-allowed; }
+        .loading { display: none; text-align: center; margin: 20px 0; }
+        .spinner {
+            width: 40px; height: 40px; border: 4px solid #e2e8f0;
+            border-top: 4px solid #667eea; border-radius: 50%;
+            animation: spin 1s linear infinite; margin: 0 auto 15px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .soap-section {
+            margin-bottom: 25px; padding: 20px; border-radius: 12px;
+            border-left: 4px solid #667eea; background: #f0f9ff;
+        }
+        .error-message {
+            background: #fed7d7; color: #c53030; padding: 15px;
+            border-radius: 10px; margin: 15px 0; display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>ChartMind</h1>
+                <p>Upload audio to generate SOAP notes</p>
+            </div>
+            
+            <div class="upload-area" id="uploadArea">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🎤</div>
+                <div>Click to upload or drag and drop</div>
+                <div style="font-size: 0.9rem; color: #718096;">MP3, WAV, M4A (Max 25MB)</div>
+                <input type="file" id="audioFile" class="file-input" accept=".mp3,.wav,.m4a" />
+            </div>
+
+            <div id="fileInfo" style="display: none; margin-top: 15px; padding: 15px; background: #e6fffa; border-radius: 10px;">
+                <div id="fileName" style="font-weight: 600; margin-bottom: 5px;"></div>
+                <div id="fileSize" style="font-size: 0.9rem; color: #718096;"></div>
+            </div>
+
+            <button id="generateBtn" class="generate-btn" disabled>Generate SOAP Note</button>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Processing audio and generating SOAP note...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">📋 Generated SOAP Note</h2>
+            <div id="resultsContainer">
+                <div style="text-align: center; padding: 60px 20px; color: #718096;">
+                    <div style="font-size: 4rem; margin-bottom: 20px; opacity: 0.5;">📄</div>
+                    <h3>No SOAP note generated yet</h3>
+                    <p>Upload an audio file to get started</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000/api';
+        let selectedFile = null;
+
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('audioFile');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const generateBtn = document.getElementById('generateBtn');
+        const loading = document.getElementById('loading');
+        const errorMessage = document.getElementById('errorMessage');
+        const resultsContainer = document.getElementById('resultsContainer');
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', handleFileSelect);
+        generateBtn.addEventListener('click', generateSOAP);
+
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file && isValidAudioFile(file)) {
+                selectedFile = file;
+                displayFileInfo(file);
+                hideError();
+            } else if (file) {
+                showError('Please select a valid audio file (MP3, WAV, M4A)');
+            }
+        }
+
+        function isValidAudioFile(file) {
+            const validTypes = ['audio/mp3', 'audio/mpeg', 'audio/wav', 'audio/m4a', 'audio/x-m4a'];
+            const validExtensions = ['.mp3', '.wav', '.m4a'];
+            const fileName = file.name.toLowerCase();
+            return validTypes.includes(file.type) || validExtensions.some(ext => fileName.endsWith(ext));
+        }
+
+        function displayFileInfo(file) {
+            fileName.textContent = file.name;
+            fileSize.textContent = `${(file.size / (1024 * 1024)).toFixed(2)} MB`;
+            fileInfo.style.display = 'block';
+            generateBtn.disabled = false;
+        }
+
+        async function generateSOAP() {
+            if (!selectedFile) {
+                showError('Please select an audio file first');
+                return;
+            }
+
+            try {
+                showLoading();
+                
+                const formData = new FormData();
+                formData.append('audio', selectedFile);
+                
+                const transcribeResponse = await fetch(`${API_BASE_URL}/transcribe`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!transcribeResponse.ok) {
+                    const errorData = await transcribeResponse.json().catch(() => ({}));
+                    throw new Error(errorData.error || `Transcription failed: ${transcribeResponse.status}`);
+                }
+
+                const transcriptionData = await transcribeResponse.json();
+                
+                const soapResponse = await fetch(`${API_BASE_URL}/generate-soap`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ transcription: transcriptionData.transcription })
+                });
+
+                if (!soapResponse.ok) {
+                    const errorData = await soapResponse.json().catch(() => ({}));
+                    throw new Error(errorData.error || `SOAP generation failed: ${soapResponse.status}`);
+                }
+
+                const soapData = await soapResponse.json();
+                displayResults(soapData.soap);
+                
+            } catch (error) {
+                console.error('Error generating SOAP:', error);
+                showError(`Failed to generate SOAP note: ${error.message}`);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        function displayResults(soapNote) {
+            resultsContainer.innerHTML = `
+                <div class="soap-section">
+                    <h3>Subjective</h3>
+                    <p>${soapNote.subjective || 'No subjective information provided.'}</p>
+                </div>
+                <div class="soap-section">
+                    <h3>Objective</h3>
+                    <p>${soapNote.objective || 'No objective information provided.'}</p>
+                </div>
+                <div class="soap-section">
+                    <h3>Assessment</h3>
+                    <p>${soapNote.assessment || 'No assessment information provided.'}</p>
+                </div>
+                <div class="soap-section">
+                    <h3>Plan</h3>
+                    <p>${soapNote.plan || 'No plan information provided.'}</p>
+                </div>
+            `;
+        }
+
+        function showLoading() {
+            loading.style.display = 'block';
+            generateBtn.disabled = true;
+        }
+
+        function hideLoading() {
+            loading.style.display = 'none';
+            generateBtn.disabled = false;
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            setTimeout(() => errorMessage.style.display = 'none', 5000);
+        }
+
+        function hideError() {
+            errorMessage.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

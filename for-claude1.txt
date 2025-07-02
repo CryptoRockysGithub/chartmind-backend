@@ -1,0 +1,2400 @@
+Microsoft Windows [Version 10.0.26100.4484]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\18433>cd C:\Apps\ChartMind-Final
+
+C:\Apps\ChartMind-Final>firebase functions:secrets:set OPENAI_API_KEY
+√ Enter a value for OPENAI_API_KEY
++  Created a new secret version projects/595715296273/secrets/OPENAI_API_KEY/versions/1
+
+C:\Apps\ChartMind-Final>cd functions
+
+C:\Apps\ChartMind-Final\functions>npm run build
+npm error Missing script: "build"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: C:\Users\18433\AppData\Local\npm-cache\_logs\2025-07-01T21_12_07_035Z-debug-0.log
+
+C:\Apps\ChartMind-Final\functions>npx tsc
+Need to install the following packages:
+tsc@2.0.4
+Ok to proceed? (y) y
+
+
+
+                This is not the tsc command you are looking for
+
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+C:\Apps\ChartMind-Final\functions>npm install typescript
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: undefined,
+npm warn EBADENGINE   required: { node: '18' },
+npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+
+added 1 package, and audited 590 packages in 2s
+
+86 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Final\functions>npx tsc
+Version 5.8.3
+tsc: The TypeScript Compiler - Version 5.8.3
+                                                                                                                     TS
+COMMON COMMANDS
+
+  tsc
+  Compiles the current project (tsconfig.json in the working directory.)
+
+  tsc app.ts util.ts
+  Ignoring tsconfig.json, compiles the specified files with default compiler options.
+
+  tsc -b
+  Build a composite project in the working directory.
+
+  tsc --init
+  Creates a tsconfig.json with the recommended settings in the working directory.
+
+  tsc -p ./path/to/tsconfig.json
+  Compiles the TypeScript project located at the specified path.
+
+  tsc --help --all
+  An expanded version of this information, showing all possible compiler options
+
+  tsc --noEmit
+  tsc --target esnext
+  Compiles the current project, with additional settings.
+
+COMMAND LINE FLAGS
+
+     --help, -h  Print this message.
+
+    --watch, -w  Watch input files.
+
+          --all  Show all compiler options.
+
+  --version, -v  Print the compiler's version.
+
+         --init  Initializes a TypeScript project and creates a tsconfig.json file.
+
+  --project, -p  Compile the project given the path to its configuration file, or to a folder with a 'tsconfig.json'.
+
+   --showConfig  Print the final configuration instead of building.
+
+    --build, -b  Build one or more projects and their dependencies, if out of date
+
+COMMON COMPILER OPTIONS
+
+               --pretty  Enable color and formatting in TypeScript's output to make compiler errors easier to read.
+                  type:  boolean
+               default:  true
+
+      --declaration, -d  Generate .d.ts files from TypeScript and JavaScript files in your project.
+                  type:  boolean
+               default:  `false`, unless `composite` is set
+
+       --declarationMap  Create sourcemaps for d.ts files.
+                  type:  boolean
+               default:  false
+
+  --emitDeclarationOnly  Only output d.ts files and not JavaScript files.
+                  type:  boolean
+               default:  false
+
+            --sourceMap  Create source map files for emitted JavaScript files.
+                  type:  boolean
+               default:  false
+
+               --noEmit  Disable emitting files from a compilation.
+                  type:  boolean
+               default:  false
+
+           --target, -t  Set the JavaScript language version for emitted JavaScript and include compatible library decla                         rations.
+                one of:  es5, es6/es2015, es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, esnext
+               default:  es5
+
+           --module, -m  Specify what module code is generated.
+                one of:  none, commonjs, amd, umd, system, es6/es2015, es2020, es2022, esnext, node16, node18, nodenext,                          preserve
+               default:  undefined
+
+                  --lib  Specify a set of bundled library declaration files that describe the target runtime environment                         .
+           one or more:  es5, es6/es2015, es7/es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, es                         next, dom, dom.iterable, dom.asynciterable, webworker, webworker.importscripts, webworker.itera                         ble, webworker.asynciterable, scripthost, es2015.core, es2015.collection, es2015.generator, es2                         015.iterable, es2015.promise, es2015.proxy, es2015.reflect, es2015.symbol, es2015.symbol.wellkn                         own, es2016.array.include, es2016.intl, es2017.arraybuffer, es2017.date, es2017.object, es2017.                         sharedmemory, es2017.string, es2017.intl, es2017.typedarrays, es2018.asyncgenerator, es2018.asy                         nciterable/esnext.asynciterable, es2018.intl, es2018.promise, es2018.regexp, es2019.array, es20                         19.object, es2019.string, es2019.symbol/esnext.symbol, es2019.intl, es2020.bigint/esnext.bigint                         , es2020.date, es2020.promise, es2020.sharedmemory, es2020.string, es2020.symbol.wellknown, es2                         020.intl, es2020.number, es2021.promise, es2021.string, es2021.weakref/esnext.weakref, es2021.i                         ntl, es2022.array, es2022.error, es2022.intl, es2022.object, es2022.string, es2022.regexp, es20                         23.array, es2023.collection, es2023.intl, es2024.arraybuffer, es2024.collection, es2024.object/                         esnext.object, es2024.promise, es2024.regexp/esnext.regexp, es2024.sharedmemory, es2024.string/                         esnext.string, esnext.array, esnext.collection, esnext.intl, esnext.disposable, esnext.promise,                          esnext.decorators, esnext.iterator, esnext.float16, decorators, decorators.legacy
+               default:  undefined
+
+              --allowJs  Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors fro                         m these files.
+                  type:  boolean
+               default:  false
+
+              --checkJs  Enable error reporting in type-checked JavaScript files.
+                  type:  boolean
+               default:  false
+
+                  --jsx  Specify what JSX code is generated.
+                one of:  preserve, react, react-native, react-jsx, react-jsxdev
+               default:  undefined
+
+              --outFile  Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, als                         o designates a file that bundles all .d.ts output.
+
+               --outDir  Specify an output folder for all emitted files.
+
+       --removeComments  Disable emitting comments.
+                  type:  boolean
+               default:  false
+
+               --strict  Enable all strict type-checking options.
+                  type:  boolean
+               default:  false
+
+                --types  Specify type package names to be included without being referenced in a source file.
+
+      --esModuleInterop  Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowS                         yntheticDefaultImports' for type compatibility.
+                  type:  boolean
+               default:  false
+
+You can learn about all of the compiler options at https://aka.ms/tsc
+
+
+C:\Apps\ChartMind-Final\functions>tsc
+'tsc' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Apps\ChartMind-Final\functions>npx typescript
+npm error could not determine executable to run
+npm error A complete log of this run can be found in: C:\Users\18433\AppData\Local\npm-cache\_logs\2025-07-01T21_14_39_738Z-debug-0.log
+
+C:\Apps\ChartMind-Final\functions>npx tsc
+Version 5.8.3
+tsc: The TypeScript Compiler - Version 5.8.3
+                                                                                                                     TS
+COMMON COMMANDS
+
+  tsc
+  Compiles the current project (tsconfig.json in the working directory.)
+
+  tsc app.ts util.ts
+  Ignoring tsconfig.json, compiles the specified files with default compiler options.
+
+  tsc -b
+  Build a composite project in the working directory.
+
+  tsc --init
+  Creates a tsconfig.json with the recommended settings in the working directory.
+
+  tsc -p ./path/to/tsconfig.json
+  Compiles the TypeScript project located at the specified path.
+
+  tsc --help --all
+  An expanded version of this information, showing all possible compiler options
+
+  tsc --noEmit
+  tsc --target esnext
+  Compiles the current project, with additional settings.
+
+COMMAND LINE FLAGS
+
+     --help, -h  Print this message.
+
+    --watch, -w  Watch input files.
+
+          --all  Show all compiler options.
+
+  --version, -v  Print the compiler's version.
+
+         --init  Initializes a TypeScript project and creates a tsconfig.json file.
+
+  --project, -p  Compile the project given the path to its configuration file, or to a folder with a 'tsconfig.json'.
+
+   --showConfig  Print the final configuration instead of building.
+
+    --build, -b  Build one or more projects and their dependencies, if out of date
+
+COMMON COMPILER OPTIONS
+
+               --pretty  Enable color and formatting in TypeScript's output to make compiler errors easier to read.
+                  type:  boolean
+               default:  true
+
+      --declaration, -d  Generate .d.ts files from TypeScript and JavaScript files in your project.
+                  type:  boolean
+               default:  `false`, unless `composite` is set
+
+       --declarationMap  Create sourcemaps for d.ts files.
+                  type:  boolean
+               default:  false
+
+  --emitDeclarationOnly  Only output d.ts files and not JavaScript files.
+                  type:  boolean
+               default:  false
+
+            --sourceMap  Create source map files for emitted JavaScript files.
+                  type:  boolean
+               default:  false
+
+               --noEmit  Disable emitting files from a compilation.
+                  type:  boolean
+               default:  false
+
+           --target, -t  Set the JavaScript language version for emitted JavaScript and include compatible library decla                         rations.
+                one of:  es5, es6/es2015, es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, esnext
+               default:  es5
+
+           --module, -m  Specify what module code is generated.
+                one of:  none, commonjs, amd, umd, system, es6/es2015, es2020, es2022, esnext, node16, node18, nodenext,                          preserve
+               default:  undefined
+
+                  --lib  Specify a set of bundled library declaration files that describe the target runtime environment                         .
+           one or more:  es5, es6/es2015, es7/es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, es                         next, dom, dom.iterable, dom.asynciterable, webworker, webworker.importscripts, webworker.itera                         ble, webworker.asynciterable, scripthost, es2015.core, es2015.collection, es2015.generator, es2                         015.iterable, es2015.promise, es2015.proxy, es2015.reflect, es2015.symbol, es2015.symbol.wellkn                         own, es2016.array.include, es2016.intl, es2017.arraybuffer, es2017.date, es2017.object, es2017.                         sharedmemory, es2017.string, es2017.intl, es2017.typedarrays, es2018.asyncgenerator, es2018.asy                         nciterable/esnext.asynciterable, es2018.intl, es2018.promise, es2018.regexp, es2019.array, es20                         19.object, es2019.string, es2019.symbol/esnext.symbol, es2019.intl, es2020.bigint/esnext.bigint                         , es2020.date, es2020.promise, es2020.sharedmemory, es2020.string, es2020.symbol.wellknown, es2                         020.intl, es2020.number, es2021.promise, es2021.string, es2021.weakref/esnext.weakref, es2021.i                         ntl, es2022.array, es2022.error, es2022.intl, es2022.object, es2022.string, es2022.regexp, es20                         23.array, es2023.collection, es2023.intl, es2024.arraybuffer, es2024.collection, es2024.object/                         esnext.object, es2024.promise, es2024.regexp/esnext.regexp, es2024.sharedmemory, es2024.string/                         esnext.string, esnext.array, esnext.collection, esnext.intl, esnext.disposable, esnext.promise,                          esnext.decorators, esnext.iterator, esnext.float16, decorators, decorators.legacy
+               default:  undefined
+
+              --allowJs  Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors fro                         m these files.
+                  type:  boolean
+               default:  false
+
+              --checkJs  Enable error reporting in type-checked JavaScript files.
+                  type:  boolean
+               default:  false
+
+                  --jsx  Specify what JSX code is generated.
+                one of:  preserve, react, react-native, react-jsx, react-jsxdev
+               default:  undefined
+
+              --outFile  Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, als                         o designates a file that bundles all .d.ts output.
+
+               --outDir  Specify an output folder for all emitted files.
+
+       --removeComments  Disable emitting comments.
+                  type:  boolean
+               default:  false
+
+               --strict  Enable all strict type-checking options.
+                  type:  boolean
+               default:  false
+
+                --types  Specify type package names to be included without being referenced in a source file.
+
+      --esModuleInterop  Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowS                         yntheticDefaultImports' for type compatibility.
+                  type:  boolean
+               default:  false
+
+You can learn about all of the compiler options at https://aka.ms/tsc
+
+
+C:\Apps\ChartMind-Final\functions>npx tsc
+Version 5.8.3
+tsc: The TypeScript Compiler - Version 5.8.3
+                                                                                                                     TS
+COMMON COMMANDS
+
+  tsc
+  Compiles the current project (tsconfig.json in the working directory.)
+
+  tsc app.ts util.ts
+  Ignoring tsconfig.json, compiles the specified files with default compiler options.
+
+  tsc -b
+  Build a composite project in the working directory.
+
+  tsc --init
+  Creates a tsconfig.json with the recommended settings in the working directory.
+
+  tsc -p ./path/to/tsconfig.json
+  Compiles the TypeScript project located at the specified path.
+
+  tsc --help --all
+  An expanded version of this information, showing all possible compiler options
+
+  tsc --noEmit
+  tsc --target esnext
+  Compiles the current project, with additional settings.
+
+COMMAND LINE FLAGS
+
+     --help, -h  Print this message.
+
+    --watch, -w  Watch input files.
+
+          --all  Show all compiler options.
+
+  --version, -v  Print the compiler's version.
+
+         --init  Initializes a TypeScript project and creates a tsconfig.json file.
+
+  --project, -p  Compile the project given the path to its configuration file, or to a folder with a 'tsconfig.json'.
+
+   --showConfig  Print the final configuration instead of building.
+
+    --build, -b  Build one or more projects and their dependencies, if out of date
+
+COMMON COMPILER OPTIONS
+
+               --pretty  Enable color and formatting in TypeScript's output to make compiler errors easier to read.
+                  type:  boolean
+               default:  true
+
+      --declaration, -d  Generate .d.ts files from TypeScript and JavaScript files in your project.
+                  type:  boolean
+               default:  `false`, unless `composite` is set
+
+       --declarationMap  Create sourcemaps for d.ts files.
+                  type:  boolean
+               default:  false
+
+  --emitDeclarationOnly  Only output d.ts files and not JavaScript files.
+                  type:  boolean
+               default:  false
+
+            --sourceMap  Create source map files for emitted JavaScript files.
+                  type:  boolean
+               default:  false
+
+               --noEmit  Disable emitting files from a compilation.
+                  type:  boolean
+               default:  false
+
+           --target, -t  Set the JavaScript language version for emitted JavaScript and include compatible library decla                         rations.
+                one of:  es5, es6/es2015, es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, esnext
+               default:  es5
+
+           --module, -m  Specify what module code is generated.
+                one of:  none, commonjs, amd, umd, system, es6/es2015, es2020, es2022, esnext, node16, node18, nodenext,                          preserve
+               default:  undefined
+
+                  --lib  Specify a set of bundled library declaration files that describe the target runtime environment                         .
+           one or more:  es5, es6/es2015, es7/es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, es                         next, dom, dom.iterable, dom.asynciterable, webworker, webworker.importscripts, webworker.itera                         ble, webworker.asynciterable, scripthost, es2015.core, es2015.collection, es2015.generator, es2                         015.iterable, es2015.promise, es2015.proxy, es2015.reflect, es2015.symbol, es2015.symbol.wellkn                         own, es2016.array.include, es2016.intl, es2017.arraybuffer, es2017.date, es2017.object, es2017.                         sharedmemory, es2017.string, es2017.intl, es2017.typedarrays, es2018.asyncgenerator, es2018.asy                         nciterable/esnext.asynciterable, es2018.intl, es2018.promise, es2018.regexp, es2019.array, es20                         19.object, es2019.string, es2019.symbol/esnext.symbol, es2019.intl, es2020.bigint/esnext.bigint                         , es2020.date, es2020.promise, es2020.sharedmemory, es2020.string, es2020.symbol.wellknown, es2                         020.intl, es2020.number, es2021.promise, es2021.string, es2021.weakref/esnext.weakref, es2021.i                         ntl, es2022.array, es2022.error, es2022.intl, es2022.object, es2022.string, es2022.regexp, es20                         23.array, es2023.collection, es2023.intl, es2024.arraybuffer, es2024.collection, es2024.object/                         esnext.object, es2024.promise, es2024.regexp/esnext.regexp, es2024.sharedmemory, es2024.string/                         esnext.string, esnext.array, esnext.collection, esnext.intl, esnext.disposable, esnext.promise,                          esnext.decorators, esnext.iterator, esnext.float16, decorators, decorators.legacy
+               default:  undefined
+
+              --allowJs  Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors fro                         m these files.
+                  type:  boolean
+               default:  false
+
+              --checkJs  Enable error reporting in type-checked JavaScript files.
+                  type:  boolean
+               default:  false
+
+                  --jsx  Specify what JSX code is generated.
+                one of:  preserve, react, react-native, react-jsx, react-jsxdev
+               default:  undefined
+
+              --outFile  Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, als                         o designates a file that bundles all .d.ts output.
+
+               --outDir  Specify an output folder for all emitted files.
+
+       --removeComments  Disable emitting comments.
+                  type:  boolean
+               default:  false
+
+               --strict  Enable all strict type-checking options.
+                  type:  boolean
+               default:  false
+
+                --types  Specify type package names to be included without being referenced in a source file.
+
+      --esModuleInterop  Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowS                         yntheticDefaultImports' for type compatibility.
+                  type:  boolean
+               default:  false
+
+You can learn about all of the compiler options at https://aka.ms/tsc
+
+
+C:\Apps\ChartMind-Final\functions>npx tsc
+Version 5.8.3
+tsc: The TypeScript Compiler - Version 5.8.3
+                                                                                                                     TS
+COMMON COMMANDS
+
+  tsc
+  Compiles the current project (tsconfig.json in the working directory.)
+
+  tsc app.ts util.ts
+  Ignoring tsconfig.json, compiles the specified files with default compiler options.
+
+  tsc -b
+  Build a composite project in the working directory.
+
+  tsc --init
+  Creates a tsconfig.json with the recommended settings in the working directory.
+
+  tsc -p ./path/to/tsconfig.json
+  Compiles the TypeScript project located at the specified path.
+
+  tsc --help --all
+  An expanded version of this information, showing all possible compiler options
+
+  tsc --noEmit
+  tsc --target esnext
+  Compiles the current project, with additional settings.
+
+COMMAND LINE FLAGS
+
+     --help, -h  Print this message.
+
+    --watch, -w  Watch input files.
+
+          --all  Show all compiler options.
+
+  --version, -v  Print the compiler's version.
+
+         --init  Initializes a TypeScript project and creates a tsconfig.json file.
+
+  --project, -p  Compile the project given the path to its configuration file, or to a folder with a 'tsconfig.json'.
+
+   --showConfig  Print the final configuration instead of building.
+
+    --build, -b  Build one or more projects and their dependencies, if out of date
+
+COMMON COMPILER OPTIONS
+
+               --pretty  Enable color and formatting in TypeScript's output to make compiler errors easier to read.
+                  type:  boolean
+               default:  true
+
+      --declaration, -d  Generate .d.ts files from TypeScript and JavaScript files in your project.
+                  type:  boolean
+               default:  `false`, unless `composite` is set
+
+       --declarationMap  Create sourcemaps for d.ts files.
+                  type:  boolean
+               default:  false
+
+  --emitDeclarationOnly  Only output d.ts files and not JavaScript files.
+                  type:  boolean
+               default:  false
+
+            --sourceMap  Create source map files for emitted JavaScript files.
+                  type:  boolean
+               default:  false
+
+               --noEmit  Disable emitting files from a compilation.
+                  type:  boolean
+               default:  false
+
+           --target, -t  Set the JavaScript language version for emitted JavaScript and include compatible library decla                         rations.
+                one of:  es5, es6/es2015, es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, esnext
+               default:  es5
+
+           --module, -m  Specify what module code is generated.
+                one of:  none, commonjs, amd, umd, system, es6/es2015, es2020, es2022, esnext, node16, node18, nodenext,                          preserve
+               default:  undefined
+
+                  --lib  Specify a set of bundled library declaration files that describe the target runtime environment                         .
+           one or more:  es5, es6/es2015, es7/es2016, es2017, es2018, es2019, es2020, es2021, es2022, es2023, es2024, es                         next, dom, dom.iterable, dom.asynciterable, webworker, webworker.importscripts, webworker.itera                         ble, webworker.asynciterable, scripthost, es2015.core, es2015.collection, es2015.generator, es2                         015.iterable, es2015.promise, es2015.proxy, es2015.reflect, es2015.symbol, es2015.symbol.wellkn                         own, es2016.array.include, es2016.intl, es2017.arraybuffer, es2017.date, es2017.object, es2017.                         sharedmemory, es2017.string, es2017.intl, es2017.typedarrays, es2018.asyncgenerator, es2018.asy                         nciterable/esnext.asynciterable, es2018.intl, es2018.promise, es2018.regexp, es2019.array, es20                         19.object, es2019.string, es2019.symbol/esnext.symbol, es2019.intl, es2020.bigint/esnext.bigint                         , es2020.date, es2020.promise, es2020.sharedmemory, es2020.string, es2020.symbol.wellknown, es2                         020.intl, es2020.number, es2021.promise, es2021.string, es2021.weakref/esnext.weakref, es2021.i                         ntl, es2022.array, es2022.error, es2022.intl, es2022.object, es2022.string, es2022.regexp, es20                         23.array, es2023.collection, es2023.intl, es2024.arraybuffer, es2024.collection, es2024.object/                         esnext.object, es2024.promise, es2024.regexp/esnext.regexp, es2024.sharedmemory, es2024.string/                         esnext.string, esnext.array, esnext.collection, esnext.intl, esnext.disposable, esnext.promise,                          esnext.decorators, esnext.iterator, esnext.float16, decorators, decorators.legacy
+               default:  undefined
+
+              --allowJs  Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors fro                         m these files.
+                  type:  boolean
+               default:  false
+
+              --checkJs  Enable error reporting in type-checked JavaScript files.
+                  type:  boolean
+               default:  false
+
+                  --jsx  Specify what JSX code is generated.
+                one of:  preserve, react, react-native, react-jsx, react-jsxdev
+               default:  undefined
+
+              --outFile  Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, als                         o designates a file that bundles all .d.ts output.
+
+               --outDir  Specify an output folder for all emitted files.
+
+       --removeComments  Disable emitting comments.
+                  type:  boolean
+               default:  false
+
+               --strict  Enable all strict type-checking options.
+                  type:  boolean
+               default:  false
+
+                --types  Specify type package names to be included without being referenced in a source file.
+
+      --esModuleInterop  Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowS                         yntheticDefaultImports' for type compatibility.
+                  type:  boolean
+               default:  false
+
+You can learn about all of the compiler options at https://aka.ms/tsc
+
+
+C:\Apps\ChartMind-Final\functions>npx tsc src/index.ts --outDir lib
+error TS6053: File 'src/index.ts' not found.
+  The file is in the program because:
+    Root file specified for compilation
+
+
+Found 1 error.
+
+
+C:\Apps\ChartMind-Final\functions>dir src
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is 3E7D-6D66
+
+ Directory of C:\Apps\ChartMind-Final\functions
+
+File Not Found
+
+C:\Apps\ChartMind-Final\functions>dir
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is 3E7D-6D66
+
+ Directory of C:\Apps\ChartMind-Final\functions
+
+07/01/2025  02:50 PM    <DIR>          .
+07/01/2025  05:10 PM    <DIR>          ..
+07/01/2025  01:57 PM               217 .eslintrc.js
+07/01/2025  11:12 AM               153 .gitignore
+07/01/2025  03:06 PM             1,728 index.js
+07/01/2025  05:13 PM    <DIR>          node_modules
+07/01/2025  05:13 PM           280,891 package-lock.json
+07/01/2025  05:13 PM               768 package.json
+07/01/2025  02:47 PM                 0 pglite-debug.log
+               6 File(s)        283,757 bytes
+               3 Dir(s)  49,655,230,464 bytes free
+
+C:\Apps\ChartMind-Final\functions>cd ..
+
+C:\Apps\ChartMind-Final>firebase deploy --only functions
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8961
+
+Error: Cannot find module 'express'
+Require stack:
+- C:\Apps\ChartMind-Final\functions\index.js
+- C:\Apps\ChartMind-Final\functions\node_modules\firebase-functions\lib\runtime\loader.js
+- C:\Apps\ChartMind-Final\functions\node_modules\firebase-functions\lib\bin\firebase-functions.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Apps\ChartMind-Final\functions\index.js:3:17)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Apps\\ChartMind-Final\\functions\\index.js',
+    'C:\\Apps\\ChartMind-Final\\functions\\node_modules\\firebase-functions\\lib\\runtime\\loader.js',
+    'C:\\Apps\\ChartMind-Final\\functions\\node_modules\\firebase-functions\\lib\\bin\\firebase-functions.js'
+  ]
+}
+
+
+Error: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error
+
+C:\Apps\ChartMind-Final>cd functions
+
+C:\Apps\ChartMind-Final\functions>
+
+C:\Apps\ChartMind-Final\functions>cd functions
+The system cannot find the path specified.
+
+C:\Apps\ChartMind-Final\functions>npm install express cors multer openai
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: undefined,
+npm warn EBADENGINE   required: { node: '18' },
+npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+
+added 39 packages, and audited 629 packages in 3s
+
+90 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Final\functions>cd ..
+
+C:\Apps\ChartMind-Final>firebase deploy --only functions
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8698
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Final\functions (84.03 KB) for uploading
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
++  functions: required API secretmanager.googleapis.com is enabled
+i  functions: ensuring chartmind-67993@appspot.gserviceaccount.com access to secret OPENAI_API_KEY.
++  secretmanager: Granted roles/secretmanager.secretAccessor on projects/chartmind-67993/secrets/OPENAI_API_KEY to chartmind-67993@appspot.gserviceaccount.com
++  functions: ensured chartmind-67993@appspot.gserviceaccount.com access to OPENAI_API_KEY.
++  functions: functions folder uploaded successfully
+
+The following functions are found in your project but do not exist in your local source code:
+        createUser(us-central1)
+        generateSoapNote(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
+√ Would you like to proceed with deletion? Selecting no will continue the rest of the deployments. Yes
+i  functions: creating Node.js 18 (1st Gen) function processAudio(us-central1)...
+i  functions: creating Node.js 18 (1st Gen) function health(us-central1)...
+i  functions: deleting Node.js 18 (1st Gen) function generateSoapNote(us-central1)...
+i  functions: deleting Node.js 18 (1st Gen) function createUser(us-central1)...
++  functions[generateSoapNote(us-central1)] Successful delete operation.
++  functions[createUser(us-central1)] Successful delete operation.
++  functions[health(us-central1)] Successful create operation.
++  functions[processAudio(us-central1)] Successful create operation.
+Function URL (processAudio(us-central1)): https://us-central1-chartmind-67993.cloudfunctions.net/processAudio
+Function URL (health(us-central1)): https://us-central1-chartmind-67993.cloudfunctions.net/health
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+
+C:\Apps\ChartMind-Final>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8771
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Final\functions (84.03 KB) for uploading
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+i  functions: Skipping the deploy of unchanged functions.
++  functions[processAudio(us-central1)] Skipped (No changes detected)
++  functions[health(us-central1)] Skipped (No changes detected)
+i  hosting[chartmind-67993]: finalizing version...
++  hosting[chartmind-67993]: version finalized
+i  hosting[chartmind-67993]: releasing new version...
++  hosting[chartmind-67993]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+Hosting URL: https://chartmind-67993.web.app
+
+C:\Apps\ChartMind-Final>firebase deploy --only hosting
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying hosting
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+i  hosting[chartmind-67993]: finalizing version...
++  hosting[chartmind-67993]: version finalized
+i  hosting[chartmind-67993]: releasing new version...
++  hosting[chartmind-67993]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+Hosting URL: https://chartmind-67993.web.app
+
+C:\Apps\ChartMind-Final>firebase functions:log --only processAudio
+2025-06-29T23:30:48.762916Z ? processaudio:     at Object.<anonymous> (/workspace/whisper.js:6:26)
+2025-06-29T23:30:48.762922Z ? processaudio:     at Module._compile (node:internal/modules/cjs/loader:1730:14)
+2025-06-29T23:30:48.762926Z ? processaudio:     at Object..js (node:internal/modules/cjs/loader:1895:10)
+2025-06-29T23:30:48.762931Z ? processaudio:     at Module.load (node:internal/modules/cjs/loader:1465:32)
+2025-06-29T23:30:48.762938Z ? processaudio:     at Function._load (node:internal/modules/cjs/loader:1282:12)
+2025-06-29T23:30:48.762945Z ? processaudio:     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-06-29T23:30:48.762950Z ? processaudio:     at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+2025-06-29T23:30:48.762957Z ? processaudio:     at Module.require (node:internal/modules/cjs/loader:1487:12)
+2025-06-29T23:30:48.762963Z ? processaudio:     at require (node:internal/modules/helpers:135:16)
+2025-06-29T23:30:48.763151Z ? processaudio: Could not load the function, shutting down.
+2025-06-29T23:30:49.353048540Z W processaudio: Container called exit(1).
+2025-06-29T23:30:49.452506Z E processaudio: Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2025-06-29T23:30:50.490773348Z E processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{"code":3,"message":"Could not create or update Cloud Run service processaudio, Container Healthcheck failed. Revision 'processaudio-00005-mim' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable within the allocated timeout. This can happen when the container port is misconfigured or if the timeout is too short. The health check timeout can be extended. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=chartmind-67993&resource=cloud_run_revision/service_name/processaudio/revision_name/processaudio-00005-mim&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22processaudio%22%0Aresource.labels.revision_name%3D%22processaudio-00005-mim%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start"},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.UpdateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T18:48:32.286171002Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"64.42.180.42","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-01T18:48:32.249896738Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.DeleteFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.delete","granted":true,"resourceAttributes":{"service":"cloudfunctions.googleapis.com","name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","type":"cloudfunctions.googleapis.com/Function"},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.cloud.functions.v2.DeleteFunctionRequest","name":"projects/chartmind-67993/locations/us-central1/functions/processAudio"},"response":{"@type":"type.googleapis.com/google.longrunning.Operation"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T18:48:35.475693600Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.DeleteFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","response":{"@type":"type.googleapis.com/google.protobuf.Empty"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:27:33.513751Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"64.42.180.42","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-01T21:27:34.040172Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CreateFunctionRequest","location":"projects/chartmind-67993/locations/us-central1","function":{"entryPoint":"processAudio","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"secretEnvironmentVariables":[{"version":"1","projectId":"chartmind-67993","key":"OPENAI_API_KEY","secret":"OPENAI_API_KEY"}],"name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/f900b342-2679-40bf-a6e1-9a567511d036.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751407013&Signature=OJS%2Fke5Kb%2BAwS9jAtEhtTFKssRYDCQ51%2Bsn67YHb%2Bd8vZHhOG9MpwlxxFo8o0YV4UWOXnE0GZSzaZnv%2BGWvXLZkCI8EZbS%2BvekiZHCpkWrz8fz0xpTr8BzeVkm9VbHkXlOEz9Iw2ZsudeKBg%2B45HEXB40lrMJ7ADWm7m1fJvxjegqqnx7CPhCMPCKpDiFOL%2BOFaqo26HkNI9Eyzkb15mV4D7BqL8ojOa4jOK%2BdhQaRUYtedNfli6BeVvp7vDmJmZ0uUvjw7JQ%2Bvy7EyFyPdEvferO0qp7x3rR1p%2FjNV5UvhTrNdabBwnOjEtUEYNl6j6Ey5pwoPatAFVs%2F%2FxbqMR5w%3D%3D","availableMemoryMb":1024,"labels":{"firebase-functions-hash":"c53e0c216eca45e447742d7dee265670d8c58f13","deployment-tool":"cli-firebase"},"dockerRegistry":"ARTIFACT_REGISTRY","timeout":"300s","runtime":"nodejs18"}},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:27:34.023883837Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"::1","requestAttributes":{"time":"2025-07-01T21:27:33.578516924Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{"service":"cloudfunctions.googleapis.com","name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","type":"cloudfunctions.googleapis.com/Function"},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"function":{"environment":"GEN_1","build_config":{"source":{},"entry_point":"processAudio","runtime":"nodejs18","docker_registry":"ARTIFACT_REGISTRY"},"labels":{"firebase-functions-hash":"c53e0c216eca45e447742d7dee265670d8c58f13","deployment-tool":"cli-firebase"},"update_time":{},"service_config":{"timeout_seconds":300,"secret_environment_variables":[{"version":"1","secret":"OPENAI_API_KEY","project_id":"chartmind-67993","key":"OPENAI_API_KEY"}],"max_instance_request_concurrency":1,"security_level":"SECURE_ALWAYS","revision":"0","available_memory":"1024M"},"name":"projects/chartmind-67993/locations/us-central1/functions/processAudio"},"parent":"projects/chartmind-67993/locations/us-central1","@type":"type.googleapis.com/google.cloud.functions.v2.CreateFunctionRequest"},"response":{"@type":"type.googleapis.com/google.longrunning.Operation"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:27:34.053324Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{"time":"2025-07-01T21:28:41.021819Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:28:41.008796Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio"}
+2025-07-01T21:28:46.529595953Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","response":{"updateTime":"2025-07-01T21:27:34.010363587Z","url":"https://us-central1-chartmind-67993.cloudfunctions.net/processAudio","satisfiesPzi":true,"name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","state":"ACTIVE","buildConfig":{"source":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/chartmind-67993/serviceAccounts/595715296273-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{},"runtime":"nodejs18","entryPoint":"processAudio"},"labels":{"firebase-functions-hash":"c53e0c216eca45e447742d7dee265670d8c58f13","deployment-tool":"cli-firebase"},"serviceConfig":{"uri":"https://us-central1-chartmind-67993.cloudfunctions.net/processAudio","serviceAccountEmail":"chartmind-67993@appspot.gserviceaccount.com","maxInstanceRequestConcurrency":1,"timeoutSeconds":300,"availableMemory":"1024M","securityLevel":"SECURE_ALWAYS","ingressSettings":"ALLOW_ALL","secretEnvironmentVariables":[{"key":"OPENAI_API_KEY","projectId":"595715296273","secret":"OPENAI_API_KEY","version":"1"}],"revision":"1"},"environment":"GEN_1","@type":"type.googleapis.com/google.cloud.functions.v2.Function"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:28:52.033733Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"64.42.180.42","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-01T21:28:52.295434Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.SetIamPolicy","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.setIamPolicy","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.iam.v1.SetIamPolicyRequest","resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","updateMask":"bindings,etag,version","policy":{"etag":"","bindings":[{"members":["allUsers"],"role":"roles/cloudfunctions.invoker"}]}},"response":{"bindings":[{"role":"roles/cloudfunctions.invoker","members":["allUsers"]}],"@type":"type.googleapis.com/google.iam.v1.Policy","etag":"BwY45NSwAYc="},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T22:52:41.170336873Z D processAudio: Function execution started
+2025-07-01T22:52:41.254644666Z D processAudio: Function execution took 84 ms, finished with status code: 404
+2025-07-01T23:02:31.383366421Z D processAudio: Function execution started
+2025-07-01T23:02:31.391783345Z D processAudio: Function execution took 8 ms, finished with status code: 404
+2025-07-01T23:04:00.529867751Z D processAudio: Function execution started
+2025-07-01T23:04:00.535026978Z D processAudio: Function execution took 5 ms, finished with status code: 404
+2025-07-01T23:06:53.070367773Z D processAudio: Function execution started
+2025-07-01T23:06:53.075725990Z D processAudio: Function execution took 5 ms, finished with status code: 404
+2025-07-01T23:14:27.732508580Z D processAudio: Function execution started
+2025-07-01T23:14:27.744184763Z D processAudio: Function execution took 11 ms, finished with status code: 500
+2025-07-01T23:14:28.775092Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-01T23:14:34.400232069Z D processAudio: Function execution started
+2025-07-01T23:14:34.407853304Z D processAudio: Function execution took 7 ms, finished with status code: 500
+2025-07-01T23:14:35.485438Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+
+C:\Apps\ChartMind-Final>firebase deploy --only hosting
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying hosting
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+i  hosting[chartmind-67993]: finalizing version...
++  hosting[chartmind-67993]: version finalized
+i  hosting[chartmind-67993]: releasing new version...
++  hosting[chartmind-67993]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+Hosting URL: https://chartmind-67993.web.app
+
+C:\Apps\ChartMind-Final>firebase functions:log --only processAudio
+2025-06-29T23:30:48.762950Z ? processaudio:     at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+2025-06-29T23:30:48.762957Z ? processaudio:     at Module.require (node:internal/modules/cjs/loader:1487:12)
+2025-06-29T23:30:48.762963Z ? processaudio:     at require (node:internal/modules/helpers:135:16)
+2025-06-29T23:30:48.763151Z ? processaudio: Could not load the function, shutting down.
+2025-06-29T23:30:49.353048540Z W processaudio: Container called exit(1).
+2025-06-29T23:30:49.452506Z E processaudio: Default STARTUP TCP probe failed 1 time consecutively for container "worker" on port 8080. The instance was not started.
+Connection failed with status CANCELLED.
+2025-06-29T23:30:50.490773348Z E processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{"code":3,"message":"Could not create or update Cloud Run service processaudio, Container Healthcheck failed. Revision 'processaudio-00005-mim' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable within the allocated timeout. This can happen when the container port is misconfigured or if the timeout is too short. The health check timeout can be extended. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=chartmind-67993&resource=cloud_run_revision/service_name/processaudio/revision_name/processaudio-00005-mim&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22processaudio%22%0Aresource.labels.revision_name%3D%22processaudio-00005-mim%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start"},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.UpdateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T18:48:32.286171002Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"64.42.180.42","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-01T18:48:32.249896738Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.DeleteFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.delete","granted":true,"resourceAttributes":{"service":"cloudfunctions.googleapis.com","name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","type":"cloudfunctions.googleapis.com/Function"},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.cloud.functions.v2.DeleteFunctionRequest","name":"projects/chartmind-67993/locations/us-central1/functions/processAudio"},"response":{"@type":"type.googleapis.com/google.longrunning.Operation"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T18:48:35.475693600Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.DeleteFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","response":{"@type":"type.googleapis.com/google.protobuf.Empty"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:27:33.513751Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"64.42.180.42","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-01T21:27:34.040172Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CreateFunctionRequest","location":"projects/chartmind-67993/locations/us-central1","function":{"entryPoint":"processAudio","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"secretEnvironmentVariables":[{"version":"1","projectId":"chartmind-67993","key":"OPENAI_API_KEY","secret":"OPENAI_API_KEY"}],"name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/f900b342-2679-40bf-a6e1-9a567511d036.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751407013&Signature=OJS%2Fke5Kb%2BAwS9jAtEhtTFKssRYDCQ51%2Bsn67YHb%2Bd8vZHhOG9MpwlxxFo8o0YV4UWOXnE0GZSzaZnv%2BGWvXLZkCI8EZbS%2BvekiZHCpkWrz8fz0xpTr8BzeVkm9VbHkXlOEz9Iw2ZsudeKBg%2B45HEXB40lrMJ7ADWm7m1fJvxjegqqnx7CPhCMPCKpDiFOL%2BOFaqo26HkNI9Eyzkb15mV4D7BqL8ojOa4jOK%2BdhQaRUYtedNfli6BeVvp7vDmJmZ0uUvjw7JQ%2Bvy7EyFyPdEvferO0qp7x3rR1p%2FjNV5UvhTrNdabBwnOjEtUEYNl6j6Ey5pwoPatAFVs%2F%2FxbqMR5w%3D%3D","availableMemoryMb":1024,"labels":{"firebase-functions-hash":"c53e0c216eca45e447742d7dee265670d8c58f13","deployment-tool":"cli-firebase"},"dockerRegistry":"ARTIFACT_REGISTRY","timeout":"300s","runtime":"nodejs18"}},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:27:34.023883837Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"::1","requestAttributes":{"time":"2025-07-01T21:27:33.578516924Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{"service":"cloudfunctions.googleapis.com","name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","type":"cloudfunctions.googleapis.com/Function"},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"function":{"environment":"GEN_1","build_config":{"source":{},"entry_point":"processAudio","runtime":"nodejs18","docker_registry":"ARTIFACT_REGISTRY"},"labels":{"firebase-functions-hash":"c53e0c216eca45e447742d7dee265670d8c58f13","deployment-tool":"cli-firebase"},"update_time":{},"service_config":{"timeout_seconds":300,"secret_environment_variables":[{"version":"1","secret":"OPENAI_API_KEY","project_id":"chartmind-67993","key":"OPENAI_API_KEY"}],"max_instance_request_concurrency":1,"security_level":"SECURE_ALWAYS","revision":"0","available_memory":"1024M"},"name":"projects/chartmind-67993/locations/us-central1/functions/processAudio"},"parent":"projects/chartmind-67993/locations/us-central1","@type":"type.googleapis.com/google.cloud.functions.v2.CreateFunctionRequest"},"response":{"@type":"type.googleapis.com/google.longrunning.Operation"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:27:34.053324Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{"time":"2025-07-01T21:28:41.021819Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:28:41.008796Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio"}
+2025-07-01T21:28:46.529595953Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","response":{"updateTime":"2025-07-01T21:27:34.010363587Z","url":"https://us-central1-chartmind-67993.cloudfunctions.net/processAudio","satisfiesPzi":true,"name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","state":"ACTIVE","buildConfig":{"source":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/chartmind-67993/serviceAccounts/595715296273-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{},"runtime":"nodejs18","entryPoint":"processAudio"},"labels":{"firebase-functions-hash":"c53e0c216eca45e447742d7dee265670d8c58f13","deployment-tool":"cli-firebase"},"serviceConfig":{"uri":"https://us-central1-chartmind-67993.cloudfunctions.net/processAudio","serviceAccountEmail":"chartmind-67993@appspot.gserviceaccount.com","maxInstanceRequestConcurrency":1,"timeoutSeconds":300,"availableMemory":"1024M","securityLevel":"SECURE_ALWAYS","ingressSettings":"ALLOW_ALL","secretEnvironmentVariables":[{"key":"OPENAI_API_KEY","projectId":"595715296273","secret":"OPENAI_API_KEY","version":"1"}],"revision":"1"},"environment":"GEN_1","@type":"type.googleapis.com/google.cloud.functions.v2.Function"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T21:28:52.033733Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"64.42.180.42","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-01T21:28:52.295434Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.SetIamPolicy","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.setIamPolicy","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.iam.v1.SetIamPolicyRequest","resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","updateMask":"bindings,etag,version","policy":{"etag":"","bindings":[{"members":["allUsers"],"role":"roles/cloudfunctions.invoker"}]}},"response":{"bindings":[{"role":"roles/cloudfunctions.invoker","members":["allUsers"]}],"@type":"type.googleapis.com/google.iam.v1.Policy","etag":"BwY45NSwAYc="},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-01T22:52:41.170336873Z D processAudio: Function execution started
+2025-07-01T22:52:41.254644666Z D processAudio: Function execution took 84 ms, finished with status code: 404
+2025-07-01T23:02:31.383366421Z D processAudio: Function execution started
+2025-07-01T23:02:31.391783345Z D processAudio: Function execution took 8 ms, finished with status code: 404
+2025-07-01T23:04:00.529867751Z D processAudio: Function execution started
+2025-07-01T23:04:00.535026978Z D processAudio: Function execution took 5 ms, finished with status code: 404
+2025-07-01T23:06:53.070367773Z D processAudio: Function execution started
+2025-07-01T23:06:53.075725990Z D processAudio: Function execution took 5 ms, finished with status code: 404
+2025-07-01T23:14:27.732508580Z D processAudio: Function execution started
+2025-07-01T23:14:27.744184763Z D processAudio: Function execution took 11 ms, finished with status code: 500
+2025-07-01T23:14:28.775092Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-01T23:14:34.400232069Z D processAudio: Function execution started
+2025-07-01T23:14:34.407853304Z D processAudio: Function execution took 7 ms, finished with status code: 500
+2025-07-01T23:14:35.485438Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T02:08:46.354141963Z D processAudio: Function execution started
+2025-07-02T02:08:46.397759224Z D processAudio: Function execution took 43 ms, finished with status code: 500
+2025-07-02T02:08:47.426491Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T02:13:24.861638181Z D processAudio: Function execution started
+2025-07-02T02:13:24.871961025Z D processAudio: Function execution took 10 ms, finished with status code: 500
+2025-07-02T02:13:25.875836Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+
+C:\Apps\ChartMind-Final>firebase deploy --only hosting
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying hosting
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+i  hosting[chartmind-67993]: finalizing version...
++  hosting[chartmind-67993]: version finalized
+i  hosting[chartmind-67993]: releasing new version...
++  hosting[chartmind-67993]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+Hosting URL: https://chartmind-67993.web.app
+
+C:\Apps\ChartMind-Final>cd C:\Apps\ChartMind-Final\functions
+
+C:\Apps\ChartMind-Final\functions># Install the stream module if needed
+'#' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Apps\ChartMind-Final\functions>npm install stream
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: undefined,
+npm warn EBADENGINE   required: { node: '18' },
+npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+
+added 2 packages, and audited 631 packages in 2s
+
+91 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Final\functions>cd ..
+
+C:\Apps\ChartMind-Final>firebase deploy --only functionsfirebase deploy --only functions
+
+C:\Apps\ChartMind-Final>firebase deploy --only functions
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8068
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Final\functions (84.24 KB) for uploading
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
++  functions: functions folder uploaded successfully
+i  functions: updating Node.js 18 (1st Gen) function processAudio(us-central1)...
+i  functions: updating Node.js 18 (1st Gen) function health(us-central1)...
++  functions[health(us-central1)] Successful update operation.
++  functions[processAudio(us-central1)] Successful update operation.
+Function URL (processAudio(us-central1)): https://us-central1-chartmind-67993.cloudfunctions.net/processAudio
+Function URL (health(us-central1)): https://us-central1-chartmind-67993.cloudfunctions.net/health
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+
+C:\Apps\ChartMind-Final>cd functions
+
+C:\Apps\ChartMind-Final\functions>npm install form-data node-fetch
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: undefined,
+npm warn EBADENGINE   required: { node: '18' },
+npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+
+added 9 packages, removed 1 package, changed 2 packages, and audited 639 packages in 2s
+
+93 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Final\functions>cd ..
+
+C:\Apps\ChartMind-Final>firebase deploy --only functions
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8537
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Final\functions (85.45 KB) for uploading
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
++  functions: functions folder uploaded successfully
+i  functions: updating Node.js 18 (1st Gen) function processAudio(us-central1)...
+i  functions: updating Node.js 18 (1st Gen) function health(us-central1)...
++  functions[processAudio(us-central1)] Successful update operation.
++  functions[health(us-central1)] Successful update operation.
+Function URL (processAudio(us-central1)): https://us-central1-chartmind-67993.cloudfunctions.net/processAudio
+Function URL (health(us-central1)): https://us-central1-chartmind-67993.cloudfunctions.net/health
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+
+C:\Apps\ChartMind-Final>firebase functions:log --only processAudio --limit 5
+error: unknown option '--limit'
+
+C:\Apps\ChartMind-Final>
+C:\Apps\ChartMind-Final>firebase functions:log processAudio
+
+Having trouble? Try firebase [command] --help
+
+C:\Apps\ChartMind-Final>firebase functions:log
+2025-07-02T02:41:46.335470090Z D processAudio: Function execution started
+2025-07-02T02:41:46.441679249Z D processAudio: Function execution took 106 ms, finished with status code: 500
+2025-07-02T02:41:47.446270Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T02:42:35.027575788Z D processAudio: Function execution started
+2025-07-02T02:42:35.036024603Z D processAudio: Function execution took 8 ms, finished with status code: 500
+2025-07-02T02:42:36.074866Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T02:46:48.806723441Z D processAudio: Function execution started
+2025-07-02T02:46:48.818189384Z D processAudio: Function execution took 11 ms, finished with status code: 500
+2025-07-02T02:46:49.848665Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T02:46:55.251960674Z D processAudio: Function execution started
+2025-07-02T02:46:55.258374441Z D processAudio: Function execution took 6 ms, finished with status code: 500
+2025-07-02T02:46:56.353073Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T02:49:51.730412Z I undefined: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"172.96.121.197","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T02:49:52.079057Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.GenerateUploadUrl","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1","permission":"cloudfunctions.functions.sourceCodeSet","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.GenerateUploadUrlRequest","parent":"projects/chartmind-67993/locations/us-central1"},"response":{"uploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/ac9b54bc-7236-4d47-9ad5-f6961f302fd0.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751426392&Signature=KuRPYlQnjMbAnllKWZZJlIP9%2B4b5fFYK7gLcsfPXBCcuoGLc%2B0W5qHlcbZ00Se7%2B0r1hHcoaBLu2V8IORDcn%2FjSKG9d1p6AX6t7V4Hx1olYD%2BwTBwqpGcCpklcn6R%2F3seTI136PhFwZYzlJ1BaRouKivc7QrTyeJTpUcU0q5Wl%2FTIFBs86qAEXTOpeCXU20X9MKX4l%2FkgnpdYh6pOFNa%2FGd19H9J%2BoSOWC4mwEnzL3DDuazsMwNK2Leq5YwvzlXVrvMoNWJL3Du7PKL%2BBADXFUmo60sJQOTfelaJH2cCe8em6xZHwe%2FeG3u2H7YJqtpSAanMSaUA6K7x5jUvebFqhA%3D%3D","@type":"type.googleapis.com/google.cloud.functions.v1.GenerateUploadUrlResponse"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:49:51.800282Z I undefined: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{"time":"2025-07-02T02:49:52.074263Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.GenerateUploadUrl","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1","permission":"cloudfunctions.functions.sourceCodeSet","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:49:52.541546Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"172.96.121.197","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T02:49:52.911080Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.update","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.UpdateFunctionRequest","updateMask":"name,sourceUploadUrl,entryPoint,runtime,dockerRegistry,labels,httpsTrigger.securityLevel,minInstances,maxInstances,ingressSettings,environmentVariables,secretEnvironmentVariables,serviceAccountEmail,availableMemoryMb,timeout,vpcConnector,vpcConnectorEgressSettings,sourceToken,buildEnvironmentVariables","function":{"runtime":"nodejs18","entryPoint":"processAudio","dockerRegistry":"ARTIFACT_REGISTRY","sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/ac9b54bc-7236-4d47-9ad5-f6961f302fd0.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751426392&Signature=KuRPYlQnjMbAnllKWZZJlIP9%2B4b5fFYK7gLcsfPXBCcuoGLc%2B0W5qHlcbZ00Se7%2B0r1hHcoaBLu2V8IORDcn%2FjSKG9d1p6AX6t7V4Hx1olYD%2BwTBwqpGcCpklcn6R%2F3seTI136PhFwZYzlJ1BaRouKivc7QrTyeJTpUcU0q5Wl%2FTIFBs86qAEXTOpeCXU20X9MKX4l%2FkgnpdYh6pOFNa%2FGd19H9J%2BoSOWC4mwEnzL3DDuazsMwNK2Leq5YwvzlXVrvMoNWJL3Du7PKL%2BBADXFUmo60sJQOTfelaJH2cCe8em6xZHwe%2FeG3u2H7YJqtpSAanMSaUA6K7x5jUvebFqhA%3D%3D","secretEnvironmentVariables":[{"key":"OPENAI_API_KEY","version":"1","projectId":"chartmind-67993","secret":"OPENAI_API_KEY"}],"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"c46a6b0e61fed9593975892cf42b90f4b2009008"},"availableMemoryMb":1024,"name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","timeout":"300s","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"}}},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:49:52.552475Z N health: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"172.96.121.197","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T02:49:52.911627Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/health","permission":"cloudfunctions.functions.update","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/health","request":{"updateMask":"name,sourceUploadUrl,entryPoint,runtime,dockerRegistry,labels,httpsTrigger.securityLevel,minInstances,maxInstances,ingressSettings,environmentVariables,serviceAccountEmail,availableMemoryMb,timeout,vpcConnector,vpcConnectorEgressSettings,sourceToken,buildEnvironmentVariables","@type":"type.googleapis.com/google.cloud.functions.v1.UpdateFunctionRequest","function":{"runtime":"nodejs18","labels":{"firebase-functions-hash":"81c7b756bf6f1255eeb2cd8fa54125040c8cb1ac","deployment-tool":"cli-firebase"},"name":"projects/chartmind-67993/locations/us-central1/functions/health","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"dockerRegistry":"ARTIFACT_REGISTRY","sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/ac9b54bc-7236-4d47-9ad5-f6961f302fd0.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751426392&Signature=KuRPYlQnjMbAnllKWZZJlIP9%2B4b5fFYK7gLcsfPXBCcuoGLc%2B0W5qHlcbZ00Se7%2B0r1hHcoaBLu2V8IORDcn%2FjSKG9d1p6AX6t7V4Hx1olYD%2BwTBwqpGcCpklcn6R%2F3seTI136PhFwZYzlJ1BaRouKivc7QrTyeJTpUcU0q5Wl%2FTIFBs86qAEXTOpeCXU20X9MKX4l%2FkgnpdYh6pOFNa%2FGd19H9J%2BoSOWC4mwEnzL3DDuazsMwNK2Leq5YwvzlXVrvMoNWJL3Du7PKL%2BBADXFUmo60sJQOTfelaJH2cCe8em6xZHwe%2FeG3u2H7YJqtpSAanMSaUA6K7x5jUvebFqhA%3D%3D","entryPoint":"health"}},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:51:08.134954Z N health: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/health"}
+2025-07-02T02:51:08.485377Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio"}
+2025-07-02T02:51:39.354584208Z D processAudio: Function execution started
+2025-07-02T02:51:39.393477890Z D processAudio: Function execution took 38 ms, finished with status code: 500
+2025-07-02T02:51:40.400575Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T02:52:27.854844154Z D processAudio: Function execution started
+2025-07-02T02:52:27.863960404Z D processAudio: Function execution took 9 ms, finished with status code: 200
+2025-07-02T02:56:21.135197Z I undefined: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"172.96.121.197","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T02:56:21.484971Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.GenerateUploadUrl","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1","permission":"cloudfunctions.functions.sourceCodeSet","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.GenerateUploadUrlRequest","parent":"projects/chartmind-67993/locations/us-central1"},"response":{"uploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/57292851-6e3e-4603-bfd7-f6ce70973347.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751426781&Signature=XC43DyGxAuj%2BU7svKuisG95cMyIM%2BwpwojepzNpHPrTT%2Foy88THylNgM1ZXwO3YQoVMZjFeP8aFJyHLHu0xeNd0Rk%2F0lPNhS3Y6TSEmngSVb0IE4x7hMr%2Bj9NsAj5sNmrbRfovUdzUyzNiFRQOJQtmPfF9z81ve5N1cHLmLaA4%2FDRTxrxFDRGhUwVeAuuE1ffYc6kCmoYwj4Dbd4cx74pRa%2F2KDvnVNd0FuDZZwcFogN52%2FQCDeQvU%2FfYC%2FdIvWc0aC5Q8usYRUazir%2FAmr3L8f9wMj2c8WzgbMg2QtzFyTE1PE1P9cwvjkqKHVCQ9fC%2F4WWIEpZ25uXtmPH%2BDzt9g%3D%3D","@type":"type.googleapis.com/google.cloud.functions.v1.GenerateUploadUrlResponse"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:56:21.187347Z I undefined: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{"time":"2025-07-02T02:56:21.481430Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.GenerateUploadUrl","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1","permission":"cloudfunctions.functions.sourceCodeSet","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:56:21.942660Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"172.96.121.197","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T02:56:22.219291Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/processAudio","permission":"cloudfunctions.functions.update","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.UpdateFunctionRequest","function":{"labels":{"firebase-functions-hash":"02b80a2fc30340e48efbba46e54e6aed52037c05","deployment-tool":"cli-firebase"},"timeout":"300s","name":"projects/chartmind-67993/locations/us-central1/functions/processAudio","dockerRegistry":"ARTIFACT_REGISTRY","availableMemoryMb":1024,"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/57292851-6e3e-4603-bfd7-f6ce70973347.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751426781&Signature=XC43DyGxAuj%2BU7svKuisG95cMyIM%2BwpwojepzNpHPrTT%2Foy88THylNgM1ZXwO3YQoVMZjFeP8aFJyHLHu0xeNd0Rk%2F0lPNhS3Y6TSEmngSVb0IE4x7hMr%2Bj9NsAj5sNmrbRfovUdzUyzNiFRQOJQtmPfF9z81ve5N1cHLmLaA4%2FDRTxrxFDRGhUwVeAuuE1ffYc6kCmoYwj4Dbd4cx74pRa%2F2KDvnVNd0FuDZZwcFogN52%2FQCDeQvU%2FfYC%2FdIvWc0aC5Q8usYRUazir%2FAmr3L8f9wMj2c8WzgbMg2QtzFyTE1PE1P9cwvjkqKHVCQ9fC%2F4WWIEpZ25uXtmPH%2BDzt9g%3D%3D","runtime":"nodejs18","entryPoint":"processAudio","secretEnvironmentVariables":[{"projectId":"chartmind-67993","key":"OPENAI_API_KEY","version":"1","secret":"OPENAI_API_KEY"}]},"updateMask":"name,sourceUploadUrl,entryPoint,runtime,dockerRegistry,labels,httpsTrigger.securityLevel,minInstances,maxInstances,ingressSettings,environmentVariables,secretEnvironmentVariables,serviceAccountEmail,availableMemoryMb,timeout,vpcConnector,vpcConnectorEgressSettings,sourceToken,buildEnvironmentVariables"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:56:21.964025Z N health: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"172.96.121.197","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T02:56:22.212011Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/health","permission":"cloudfunctions.functions.update","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/health","request":{"function":{"runtime":"nodejs18","sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/57292851-6e3e-4603-bfd7-f6ce70973347.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751426781&Signature=XC43DyGxAuj%2BU7svKuisG95cMyIM%2BwpwojepzNpHPrTT%2Foy88THylNgM1ZXwO3YQoVMZjFeP8aFJyHLHu0xeNd0Rk%2F0lPNhS3Y6TSEmngSVb0IE4x7hMr%2Bj9NsAj5sNmrbRfovUdzUyzNiFRQOJQtmPfF9z81ve5N1cHLmLaA4%2FDRTxrxFDRGhUwVeAuuE1ffYc6kCmoYwj4Dbd4cx74pRa%2F2KDvnVNd0FuDZZwcFogN52%2FQCDeQvU%2FfYC%2FdIvWc0aC5Q8usYRUazir%2FAmr3L8f9wMj2c8WzgbMg2QtzFyTE1PE1P9cwvjkqKHVCQ9fC%2F4WWIEpZ25uXtmPH%2BDzt9g%3D%3D","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"f872502a0d8b9bc9d8e9aadf1d7289a5211c69da"},"name":"projects/chartmind-67993/locations/us-central1/functions/health","entryPoint":"health","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"dockerRegistry":"ARTIFACT_REGISTRY"},"updateMask":"name,sourceUploadUrl,entryPoint,runtime,dockerRegistry,labels,httpsTrigger.securityLevel,minInstances,maxInstances,ingressSettings,environmentVariables,serviceAccountEmail,availableMemoryMb,timeout,vpcConnector,vpcConnectorEgressSettings,sourceToken,buildEnvironmentVariables","@type":"type.googleapis.com/google.cloud.functions.v1.UpdateFunctionRequest"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T02:57:29.143300Z N processAudio: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/processAudio"}
+2025-07-02T02:57:34.846101Z N health: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.UpdateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/health"}
+2025-07-02T03:05:12.844975006Z D processAudio: Function execution started
+2025-07-02T03:05:12.898354335Z D processAudio: Function execution took 53 ms, finished with status code: 500
+2025-07-02T03:05:13.915984Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T03:05:19.835443644Z D processAudio: Function execution started
+2025-07-02T03:05:19.846023874Z D processAudio: Function execution took 10 ms, finished with status code: 500
+2025-07-02T03:05:20.928215Z E processAudio: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+
+C:\Apps\ChartMind-Final>cd C:\Apps\ChartMind-Simple
+
+C:\Apps\ChartMind-Simple>npm init -y
+Wrote to C:\Apps\ChartMind-Simple\package.json:
+
+{
+  "name": "chartmind-simple",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+
+C:\Apps\ChartMind-Simple>npm install express multer form-data node-fetch
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 99 packages, and audited 100 packages in 4s
+
+19 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Simple>mkdir public
+
+C:\Apps\ChartMind-Simple>node server.js
+🩺 ChartMind server running at http://localhost:3000
+📋 Ready for Dr. Rosenberg's SOAP notes!
+💡 Open http://localhost:3000 in your browser
+[ChartMind] Processing audio request...
+[ChartMind] Processing file: Recording.mp3
+[ChartMind] Transcribing with Whisper...
+[ChartMind] Processing error: TypeError: fetch is not a function
+    at C:\Apps\ChartMind-Simple\server.js:55:38
+    at Layer.handleRequest (C:\Apps\ChartMind-Simple\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Apps\ChartMind-Simple\node_modules\router\lib\route.js:157:13)
+    at done (C:\Apps\ChartMind-Simple\node_modules\multer\lib\make-middleware.js:59:7)
+    at indicateDone (C:\Apps\ChartMind-Simple\node_modules\multer\lib\make-middleware.js:63:68)
+    at C:\Apps\ChartMind-Simple\node_modules\multer\lib\make-middleware.js:171:11
+    at WriteStream.<anonymous> (C:\Apps\ChartMind-Simple\node_modules\multer\storage\disk.js:43:9)
+    at WriteStream.emit (node:events:530:35)
+    at finish (node:internal/streams/writable:955:10)
+    at node:internal/streams/writable:936:13
+^C
+C:\Apps\ChartMind-Simple>
+C:\Apps\ChartMind-Simple>node server.js
+🩺 ChartMind server running at http://localhost:3000
+📋 Ready for Dr. Rosenberg's SOAP notes!
+💡 Open http://localhost:3000 in your browser
+[ChartMind] Processing audio request...
+[ChartMind] Processing file: Recording.mp3
+[ChartMind] Transcribing with Whisper...
+[ChartMind] Processing error: TypeError: Failed to execute 'append' on 'FormData': parameter 2 is not of type 'Blob'
+    at _FormData.append (node:internal/deps/undici/undici:5055:17)
+    at C:\Apps\ChartMind-Simple\server.js:49:14
+    at Layer.handleRequest (C:\Apps\ChartMind-Simple\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Apps\ChartMind-Simple\node_modules\router\lib\route.js:157:13)
+    at done (C:\Apps\ChartMind-Simple\node_modules\multer\lib\make-middleware.js:59:7)
+    at indicateDone (C:\Apps\ChartMind-Simple\node_modules\multer\lib\make-middleware.js:63:68)
+    at C:\Apps\ChartMind-Simple\node_modules\multer\lib\make-middleware.js:171:11
+    at WriteStream.<anonymous> (C:\Apps\ChartMind-Simple\node_modules\multer\storage\disk.js:43:9)
+    at WriteStream.emit (node:events:530:35)
+    at finish (node:internal/streams/writable:955:10)
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: ENOENT: no such file or directory, open 'C:\Apps\ChartMind-Simple\uploads\0efde6931a7697d56760319e2bfacbd5'
+Emitted 'error' event on ReadStream instance at:
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Apps\\ChartMind-Simple\\uploads\\0efde6931a7697d56760319e2bfacbd5'
+}
+
+Node.js v22.16.0
+
+C:\Apps\ChartMind-Simple>
+
+C:\Apps\ChartMind-Simple>node server.js
+🩺 ChartMind server running at http://localhost:3000
+📋 Ready for Dr. Rosenberg's SOAP notes!
+💡 Open http://localhost:3000 in your browser
+[ChartMind] Processing audio request...
+[ChartMind] Processing file: Recording.mp3
+[ChartMind] File path: uploads\b5ccc514707ed976d41ae284674f021f
+[ChartMind] Transcribing with Whisper...
+Transcription error: {
+    "error": {
+        "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+        "type": "insufficient_quota",
+        "param": null,
+        "code": "insufficient_quota"
+    }
+}
+
+[ChartMind] Processing error: Error: Transcription failed: 429 Too Many Requests
+    at C:\Apps\ChartMind-Simple\server.js:71:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[ChartMind] Processing audio request...
+[ChartMind] Processing file: Recording.mp3
+[ChartMind] File path: uploads\7e82528365fa35ea1d48c484267dcc4a
+[ChartMind] Transcribing with Whisper...
+[ChartMind] Transcription completed: Hello, check one two. Transcribe test. Can you handle it?...
+[ChartMind] Generating SOAP note...
+[ChartMind] Processing completed successfully
+^C
+C:\Apps\ChartMind-Simple> node server.js
+🩺 ChartMind server running at http://localhost:3000
+📋 Ready for Dr. Rosenberg's SOAP notes!
+💡 Open http://localhost:3000 in your browser
+^C
+C:\Apps\ChartMind-Simple>node server.js
+🩺 ChartMind server running at http://localhost:3000
+📋 Ready for Dr. Rosenberg's SOAP notes!
+💡 Open http://localhost:3000 in your browser
+^C
+C:\Apps\ChartMind-Simple>>mkdir public
+'public' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Apps\ChartMind-Simple>cd C:\Apps\ChartMind-Simple\functions
+The system cannot find the path specified.
+
+C:\Apps\ChartMind-Simple>npm install openai
+
+added 1 package, and audited 101 packages in 5s
+
+19 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Simple>npm uninstall form-data node-fetch
+
+removed 14 packages, and audited 87 packages in 1s
+
+15 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Simple>cd C:\Apps\ChartMind-Simple
+
+C:\Apps\ChartMind-Simple>firebase init
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Apps\ChartMind-Simple
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+√ Are you ready to proceed? Yes
+√ Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to
+confirm your choices. Functions: Configure a Cloud Functions directory and its files, Hosting: Configure files for
+Firebase Hosting and (optionally) set up GitHub Action deploys
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+√ Please select an option: Use an existing project
+√ Select a default Firebase project for this directory: chartmind-67993 (ChartMind)
+i  Using project chartmind-67993 (ChartMind)
+
+=== Functions Setup
+Let's create a new codebase for your functions.
+A directory corresponding to the codebase will be created in your project
+with sample code pre-configured.
+
+See https://firebase.google.com/docs/functions/organize-functions for
+more information on organizing your functions using codebases.
+
+Functions can be deployed with firebase deploy.
+
+√ What language would you like to use to write Cloud Functions? JavaScript
+√ Do you want to use ESLint to catch probable bugs and enforce style? Yes
++  Wrote functions/package.json
++  Wrote functions/.eslintrc.js
++  Wrote functions/index.js
++  Wrote functions/.gitignore
+√ Do you want to install dependencies with npm now? Yes
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 575 packages, and audited 576 packages in 26s
+
+85 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+√ What do you want to use as your public directory? public
+√ Configure as a single-page app (rewrite all urls to /index.html)? Yes
+√ Set up automatic builds and deploys with GitHub? No
+√ File public/index.html already exists. Overwrite? No
+i  Skipping write of public/index.html
+
++  Wrote configuration info to firebase.json
++  Wrote project information to .firebaserc
++  Wrote .gitignore
+
++  Firebase initialization complete!
+
+C:\Apps\ChartMind-Simple>dir
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is 3E7D-6D66
+
+ Directory of C:\Apps\ChartMind-Simple
+
+07/02/2025  06:06 AM    <DIR>          .
+07/01/2025  11:14 PM    <DIR>          ..
+07/02/2025  06:06 AM                57 .firebaserc
+07/02/2025  06:06 AM             1,210 .gitignore
+07/02/2025  06:06 AM               554 firebase.json
+07/02/2025  06:04 AM    <DIR>          functions
+07/02/2025  05:38 AM                 0 mkdir
+07/01/2025  11:19 PM                 0 New Text Document.txt
+07/02/2025  05:59 AM    <DIR>          node_modules
+07/02/2025  05:59 AM            36,468 package-lock.json
+07/02/2025  05:59 AM               327 package.json
+07/02/2025  06:01 AM                 0 pglite-debug.log
+07/01/2025  11:27 PM    <DIR>          public
+07/02/2025  12:45 AM         1,030,419 Screenshot 2025-07-01 232912.png
+07/01/2025  11:39 PM             6,171 server.js
+07/01/2025  11:52 PM    <DIR>          uploads
+              10 File(s)      1,075,206 bytes
+               6 Dir(s)  48,775,008,256 bytes free
+
+C:\Apps\ChartMind-Simple>cd functions
+
+C:\Apps\ChartMind-Simple\functions>npm install express multer openai
+
+added 45 packages, removed 10 packages, changed 18 packages, and audited 611 packages in 4s
+
+89 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Simple\functions>type index.js
+/**
+ * Import function triggers from their respective submodules:
+ *
+ * const {onCall} = require("firebase-functions/v2/https");
+ * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
+ *
+ * See a full list of supported triggers at https://firebase.google.com/docs/functions
+ */
+
+const {setGlobalOptions} = require("firebase-functions");
+const {onRequest} = require("firebase-functions/https");
+const logger = require("firebase-functions/logger");
+
+// For cost control, you can set the maximum number of containers that can be
+// running at the same time. This helps mitigate the impact of unexpected
+// traffic spikes by instead downgrading performance. This limit is a
+// per-function limit. You can override the limit for each function using the
+// `maxInstances` option in the function's options, e.g.
+// `onRequest({ maxInstances: 5 }, (req, res) => { ... })`.
+// NOTE: setGlobalOptions does not apply to functions using the v1 API. V1
+// functions should each use functions.runWith({ maxInstances: 10 }) instead.
+// In the v1 API, each function can only serve one request per container, so
+// this will be the maximum concurrent request count.
+setGlobalOptions({ maxInstances: 10 });
+
+// Create and deploy your first functions
+// https://firebase.google.com/docs/functions/get-started
+
+// exports.helloWorld = onRequest((request, response) => {
+//   logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });
+
+C:\Apps\ChartMind-Simple\functions>firebase functions:secrets:set OPENAI_API_KEY
+√ Enter a value for OPENAI_API_KEY
++  Created a new secret version projects/595715296273/secrets/OPENAI_API_KEY/versions/2
+i  1 functions are using stale version of secret OPENAI_API_KEY:
+        processAudio(us-central1)
+√ Do you want to re-deploy the functions and destroy the stale version of secret OPENAI_API_KEY? Yes
+i  Updating function processAudio(us-central1)...
+i  Updated function processAudio(us-central1).
+i  Removing secret versions:
+
+C:\Apps\ChartMind-Simple\functions>y
+'y' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Apps\ChartMind-Simple\functions>cd ..
+
+C:\Apps\ChartMind-Simple>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
+Running command: npm --prefix "$RESOURCE_DIR" run lint
+
+> lint
+> eslint .
+
+
+C:\Apps\ChartMind-Simple\functions\index.js
+    1:27   error  Strings must use doublequote                          quotes
+    1:49   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    2:25   error  Strings must use doublequote                          quotes
+    2:36   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    3:22   error  Strings must use doublequote                          quotes
+    3:30   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    4:24   error  Strings must use doublequote                          quotes
+    4:34   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    5:8    error  There should be no space after '{'                    object-curly-spacing
+    5:15   error  There should be no space before '}'                   object-curly-spacing
+    5:28   error  Strings must use doublequote                          quotes
+    5:38   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    6:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    7:26   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    8:23   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+    9:15   error  There should be no space after '{'                    object-curly-spacing
+    9:28   error  There should be no space before '}'                   object-curly-spacing
+    9:33   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   10:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   11:74   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   12:24   error  Trailing spaces not allowed                           no-trailing-spaces
+   12:25   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   13:35   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   14:12   error  There should be no space after '{'                    object-curly-spacing
+   14:39   error  There should be no space before '}'                   object-curly-spacing
+   14:41   error  Missing trailing comma                                comma-dangle
+   14:49   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   15:4    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   16:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   17:21   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   18:28   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   19:37   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   19:37   error  Missing trailing comma                                comma-dangle
+   20:4    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   21:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   22:25   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   23:9    error  Strings must use doublequote                          quotes
+   23:35   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   24:13   error  Trailing spaces not allowed                           no-trailing-spaces
+   24:14   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   25:13   error  Strings must use doublequote                          quotes
+   25:23   error  Trailing spaces not allowed                           no-trailing-spaces
+   25:24   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   26:41   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   27:14   error  Strings must use doublequote                          quotes
+   27:36   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   27:36   error  Missing trailing comma                                comma-dangle
+   28:6    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   29:4    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   30:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   31:34   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   32:10   error  Strings must use doublequote                          quotes
+   32:42   error  Strings must use doublequote                          quotes
+   32:73   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   33:8    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   34:17   error  Strings must use doublequote                          quotes
+   34:67   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   35:1    error  Trailing spaces not allowed                           no-trailing-spaces
+   35:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   36:21   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   37:36   error  Trailing spaces not allowed                           no-trailing-spaces
+   37:37   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   38:16   error  Strings must use doublequote                          quotes
+   38:41   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   39:18   error  Strings must use doublequote                          quotes
+   39:47   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   39:47   error  Missing trailing comma                                comma-dangle
+   40:10   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   41:6    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   42:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   43:41   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   44:48   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   45:1    error  Trailing spaces not allowed                           no-trailing-spaces
+   45:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   46:72   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   47:78   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   48:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   49:46   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   50:17   error  Strings must use doublequote                          quotes
+   50:68   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   51:1    error  Trailing spaces not allowed                           no-trailing-spaces
+   51:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   52:62   error  Trailing spaces not allowed                           no-trailing-spaces
+   52:63   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   53:30   error  Trailing spaces not allowed                           no-trailing-spaces
+   53:30   error  Missing trailing comma                                comma-dangle
+   53:31   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   54:8    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   55:1    error  Trailing spaces not allowed                           no-trailing-spaces
+   55:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   56:69   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   57:23   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   58:14   error  Strings must use doublequote                          quotes
+   58:26   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   59:24   error  Strings must use doublequote                          quotes
+   59:31   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   60:17   error  Strings must use doublequote                          quotes
+   60:21   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   60:21   error  Missing trailing comma                                comma-dangle
+   61:8    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   62:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   63:43   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   64:1    error  This line has a length of 98. Maximum allowed is 80   max-len
+   64:99   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   65:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   66:45   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   67:17   error  Strings must use doublequote                          quotes
+   67:63   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   68:1    error  Trailing spaces not allowed                           no-trailing-spaces
+   68:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   69:1    error  This line has a length of 139. Maximum allowed is 80  max-len
+   69:140  error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   70:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   71:1    error  This line has a length of 107. Maximum allowed is 80  max-len
+   71:108  error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   72:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   73:12   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   74:65   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   75:61   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   76:63   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   77:57   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   78:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   79:1    error  This line has a length of 109. Maximum allowed is 80  max-len
+   79:110  error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   80:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   81:12   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   82:16   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   83:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   84:32   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   85:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   86:62   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   87:14   error  Strings must use doublequote                          quotes
+   87:22   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   88:18   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   89:10   error  Trailing spaces not allowed                           no-trailing-spaces
+   89:11   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   90:17   error  Strings must use doublequote                          quotes
+   90:26   error  Trailing spaces not allowed                           no-trailing-spaces
+   90:27   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   91:1    error  This line has a length of 105. Maximum allowed is 80  max-len
+   91:20   error  Strings must use doublequote                          quotes
+   91:106  error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   91:106  error  Missing trailing comma                                comma-dangle
+   92:11   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   93:10   error  Trailing spaces not allowed                           no-trailing-spaces
+   93:11   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   94:17   error  Strings must use doublequote                          quotes
+   94:24   error  Trailing spaces not allowed                           no-trailing-spaces
+   94:25   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   95:30   error  Trailing spaces not allowed                           no-trailing-spaces
+   95:30   error  Missing trailing comma                                comma-dangle
+   95:31   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   96:10   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   96:10   error  Missing trailing comma                                comma-dangle
+   97:9    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   98:24   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   99:23   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+   99:23   error  Missing trailing comma                                comma-dangle
+  100:8    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  101:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  102:63   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  103:1    error  Trailing spaces not allowed                           no-trailing-spaces
+  103:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  104:28   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  105:18   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  106:10   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  107:42   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  108:1    error  Trailing spaces not allowed                           no-trailing-spaces
+  108:7    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  109:34   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  110:31   error  Strings must use doublequote                          quotes
+  110:45   error  Strings must use doublequote                          quotes
+  110:58   error  Strings must use doublequote                          quotes
+  110:72   error  Strings must use doublequote                          quotes
+  110:80   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  111:51   error  Expected parentheses around arrow function argument   arrow-parens
+  111:78   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  112:1    error  Trailing spaces not allowed                           no-trailing-spaces
+  112:7    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  113:38   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  114:1    error  This line has a length of 92. Maximum allowed is 80   max-len
+  114:84   error  Strings must use doublequote                          quotes
+  114:93   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  115:31   error  Expected parentheses around arrow function argument   arrow-parens
+  115:41   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  116:29   error  Strings must use doublequote                          quotes
+  116:60   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  117:12   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  118:8    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  118:8    error  Block must not be padded by blank lines               padded-blocks
+  119:1    error  Trailing spaces not allowed                           no-trailing-spaces
+  119:7    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  120:27   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  121:1    error  This line has a length of 81. Maximum allowed is 80   max-len
+  121:21   error  Strings must use doublequote                          quotes
+  121:82   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  122:19   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  123:33   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  124:20   error  Strings must use doublequote                          quotes
+  124:51   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  125:21   error  Strings must use doublequote                          quotes
+  125:57   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  126:15   error  Strings must use doublequote                          quotes
+  126:39   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  126:39   error  Missing trailing comma                                comma-dangle
+  127:9    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  128:6    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  129:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  130:21   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  131:21   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  132:43   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  133:30   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  134:22   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  135:18   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  136:37   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  137:44   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  138:44   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  138:44   error  Missing trailing comma                                comma-dangle
+  139:8    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  139:8    error  Missing trailing comma                                comma-dangle
+  140:7    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  141:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  142:17   error  Strings must use doublequote                          quotes
+  142:73   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  143:22   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  143:22   error  Block must not be padded by blank lines               padded-blocks
+  144:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  145:20   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  146:19   error  Strings must use doublequote                          quotes
+  146:66   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  147:1    error  Trailing spaces not allowed                           no-trailing-spaces
+  147:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  148:26   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  149:24   error  Strings must use doublequote                          quotes
+  149:44   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  150:1    error  Trailing spaces not allowed                           no-trailing-spaces
+  150:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  151:32   error  Strings must use doublequote                          quotes
+  151:67   error  Strings must use doublequote                          quotes
+  151:80   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  152:24   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  153:22   error  Strings must use doublequote                          quotes
+  153:73   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  154:39   error  Strings must use doublequote                          quotes
+  154:52   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  155:24   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  156:22   error  Strings must use doublequote                          quotes
+  156:54   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  157:6    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  158:1    error  Trailing spaces not allowed                           no-trailing-spaces
+  158:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  159:34   error  Trailing spaces not allowed                           no-trailing-spaces
+  159:35   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  160:22   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  161:27   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  162:30   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  163:42   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  163:42   error  Missing trailing comma                                comma-dangle
+  164:8    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  165:4    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  166:4    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  167:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  168:30   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  169:24   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  170:1    error  Expected indentation of 4 spaces but found 2          indent
+  170:13   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  171:1    error  Expected indentation of 6 spaces but found 4          indent
+  171:25   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  172:1    error  Expected indentation of 6 spaces but found 4          indent
+  172:13   error  Strings must use doublequote                          quotes
+  172:19   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  173:1    error  Expected indentation of 6 spaces but found 4          indent
+  173:15   error  Strings must use doublequote                          quotes
+  173:32   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  173:32   error  Missing trailing comma                                comma-dangle
+  174:1    error  Expected indentation of 4 spaces but found 2          indent
+  174:5    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  175:1    error  Expected indentation of 4 spaces but found 2          indent
+  175:25   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  176:1    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  177:59   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  178:13   error  Trailing spaces not allowed                           no-trailing-spaces
+  178:14   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  179:13   error  Strings must use doublequote                          quotes
+  179:23   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  180:14   error  Strings must use doublequote                          quotes
+  180:33   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  181:40   error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  181:40   error  Missing trailing comma                                comma-dangle
+  182:6    error  Expected linebreaks to be 'LF' but found 'CRLF'       linebreak-style
+  183:4    error  Newline required at end of file but not found         eol-last
+
+✖ 291 problems (291 errors, 0 warnings)
+  284 errors and 0 warnings potentially fixable with the `--fix` option.
+
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: spawn npm --prefix "%RESOURCE_DIR%" run lint ENOENT
+    at notFoundError (C:\Users\18433\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\18433\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\18433\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)
+Emitted 'error' event on ChildProcess instance at:
+    at cp.emit (C:\Users\18433\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:30:37)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12) {
+  code: 'ENOENT',
+  errno: 'ENOENT',
+  syscall: 'spawn npm --prefix "%RESOURCE_DIR%" run lint',
+  path: 'npm --prefix "%RESOURCE_DIR%" run lint',
+  spawnargs: []
+}
+
+Node.js v22.16.0
+
+Error: functions predeploy error: Command terminated with non-zero exit code 1
+
+C:\Apps\ChartMind-Simple>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+
+Error: `runtime` field is required but was not found in firebase.json or package.json.
+To fix this, add the following lines to the `functions` section of your firebase.json:
+"runtime": "nodejs22" or set the "engine" field in package.json
+
+
+C:\Apps\ChartMind-Simple>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8007
+
+OpenAIError: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).
+    at new OpenAI (C:\Apps\ChartMind-Simple\functions\node_modules\openai\client.js:86:19)
+    at Object.<anonymous> (C:\Apps\ChartMind-Simple\functions\index.js:18:16)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+
+
+Error: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error
+
+C:\Apps\ChartMind-Simple>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8640
+
+TypeError: functions.runWith is not a function
+    at Object.<anonymous> (C:\Apps\ChartMind-Simple\functions\index.js:174:4)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at loadModule (C:\Apps\ChartMind-Simple\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+
+
+Error: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error
+
+C:\Apps\ChartMind-Simple>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8081
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Simple\functions (83.43 KB) for uploading
+i  functions: ensuring required API run.googleapis.com is enabled...
+i  functions: ensuring required API eventarc.googleapis.com is enabled...
+i  functions: ensuring required API pubsub.googleapis.com is enabled...
+i  functions: ensuring required API storage.googleapis.com is enabled...
+i  functions: generating the service identity for pubsub.googleapis.com...
+i  functions: generating the service identity for eventarc.googleapis.com...
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
+i  functions: ensuring 595715296273-compute@developer.gserviceaccount.com access to secret OPENAI_API_KEY.
++  secretmanager: Granted roles/secretmanager.secretAccessor on projects/chartmind-67993/secrets/OPENAI_API_KEY to 595715296273-compute@developer.gserviceaccount.com
++  functions: ensured 595715296273-compute@developer.gserviceaccount.com access to OPENAI_API_KEY.
++  functions: functions folder uploaded successfully
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+
+Error: [health(us-central1)] Upgrading from 1st Gen to 2nd Gen is not yet supported. See https://firebase.google.com/docs/functions/2nd-gen-upgrade before migrating to 2nd Gen.
+
+Having trouble? Try firebase [command] --help
+
+C:\Apps\ChartMind-Simple>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8161
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Simple\functions (83.44 KB) for uploading
+i  functions: ensuring required API run.googleapis.com is enabled...
+i  functions: ensuring required API eventarc.googleapis.com is enabled...
+i  functions: ensuring required API pubsub.googleapis.com is enabled...
+i  functions: ensuring required API storage.googleapis.com is enabled...
+i  functions: generating the service identity for pubsub.googleapis.com...
+i  functions: generating the service identity for eventarc.googleapis.com...
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
+i  functions: ensuring 595715296273-compute@developer.gserviceaccount.com access to secret OPENAI_API_KEY.
++  secretmanager: Granted roles/secretmanager.secretAccessor on projects/chartmind-67993/secrets/OPENAI_API_KEY to 595715296273-compute@developer.gserviceaccount.com
++  functions: ensured 595715296273-compute@developer.gserviceaccount.com access to OPENAI_API_KEY.
++  functions: functions folder uploaded successfully
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+
+The following functions are found in your project but do not exist in your local source code:
+        health(us-central1)
+        processAudio(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
+√ Would you like to proceed with deletion? Selecting no will continue the rest of the deployments. Yes
+i  functions: creating Node.js 18 (2nd Gen) function chartmindApi(us-central1)...
+i  functions: creating Node.js 18 (2nd Gen) function chartmindHealth(us-central1)...
+i  functions: deleting Node.js 18 (1st Gen) function health(us-central1)...
++  functions[health(us-central1)] Successful delete operation.
+Build failed with status: FAILURE and message: npm error code EUSAGE
+npm error
+npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+npm error
+npm error Invalid: lock file's express@5.1.0 does not satisfy express@4.21.2
+npm error Invalid: lock file's firebase-functions@6.3.2 does not satisfy firebase-functions@5.1.1
+npm error Invalid: lock file's multer@2.0.1 does not satisfy multer@1.4.5-lts.2
+npm error Invalid: lock file's openai@5.8.2 does not satisfy openai@4.104.0
+npm error Invalid: lock file's accepts@2.0.0 does not satisfy accepts@1.3.8
+npm error Invalid: lock file's body-parser@2.2.0 does not satisfy body-parser@1.20.3
+npm error Invalid: lock file's content-disposition@1.0.0 does not satisfy content-disposition@0.5.4
+npm error Invalid: lock file's cookie-signature@1.2.2 does not satisfy cookie-signature@1.0.6
+npm error Missing: debug@2.6.9 from lock file
+npm error Invalid: lock file's finalhandler@2.1.0 does not satisfy finalhandler@1.3.1
+npm error Invalid: lock file's fresh@2.0.0 does not satisfy fresh@0.5.2
+npm error Invalid: lock file's merge-descriptors@2.0.0 does not satisfy merge-descriptors@1.0.3
+npm error Invalid: lock file's path-to-regexp@8.2.0 does not satisfy path-to-regexp@0.1.12
+npm error Invalid: lock file's qs@6.14.0 does not satisfy qs@6.13.0
+npm error Invalid: lock file's send@1.2.0 does not satisfy send@0.19.0
+npm error Invalid: lock file's serve-static@2.2.0 does not satisfy serve-static@1.16.2
+npm error Invalid: lock file's statuses@2.0.2 does not satisfy statuses@2.0.1
+npm error Invalid: lock file's type-is@2.0.1 does not satisfy type-is@1.6.18
+npm error Invalid: lock file's negotiator@1.0.0 does not satisfy negotiator@0.6.3
+npm error Missing: debug@2.6.9 from lock file
+npm error Invalid: lock file's iconv-lite@0.6.3 does not satisfy iconv-lite@0.4.24
+npm error Invalid: lock file's raw-body@3.0.0 does not satisfy raw-body@2.5.2
+npm error Missing: debug@2.6.9 from lock file
+npm error Missing: @types/express@4.17.3 from lock file
+npm error Invalid: lock file's concat-stream@2.0.0 does not satisfy concat-stream@1.6.2
+npm error Missing: readable-stream@2.3.8 from lock file
+npm error Missing: @types/node@18.19.115 from lock file
+npm error Missing: @types/node-fetch@2.6.12 from lock file
+npm error Missing: agentkeepalive@4.6.0 from lock file
+npm error Missing: form-data-encoder@1.7.2 from lock file
+npm error Missing: formdata-node@4.4.1 from lock file
+npm error Missing: form-data@4.0.3 from lock file
+npm error Missing: humanize-ms@1.2.1 from lock file
+npm error Missing: node-domexception@1.0.0 from lock file
+npm error Missing: web-streams-polyfill@4.0.0-beta.3 from lock file
+npm error Missing: debug@2.6.9 from lock file
+npm error Missing: encodeurl@1.0.2 from lock file
+npm error Missing: mime@1.6.0 from lock file
+npm error Invalid: lock file's media-typer@1.1.0 does not satisfy media-typer@0.3.0
+npm error Missing: ms@2.0.0 from lock file
+npm error Missing: core-util-is@1.0.3 from lock file
+npm error Missing: isarray@1.0.0 from lock file
+npm error Missing: process-nextick-args@2.0.1 from lock file
+npm error Missing: safe-buffer@5.1.2 from lock file
+npm error Missing: string_decoder@1.1.1 from lock file
+npm error Missing: ms@2.0.0 from lock file
+npm error Missing: ms@2.0.0 from lock file
+npm error Missing: undici-types@5.26.5 from lock file
+npm error Missing: ms@2.0.0 from lock file
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2025-07-02T10_33_01_911Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/19477597-864d-4286-9780-17922da2e456?project=595715296273.
+Build failed with status: FAILURE and message: npm error code EUSAGE
+npm error
+npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+npm error
+npm error Invalid: lock file's express@5.1.0 does not satisfy express@4.21.2
+npm error Invalid: lock file's firebase-functions@6.3.2 does not satisfy firebase-functions@5.1.1
+npm error Invalid: lock file's multer@2.0.1 does not satisfy multer@1.4.5-lts.2
+npm error Invalid: lock file's openai@5.8.2 does not satisfy openai@4.104.0
+npm error Invalid: lock file's accepts@2.0.0 does not satisfy accepts@1.3.8
+npm error Invalid: lock file's body-parser@2.2.0 does not satisfy body-parser@1.20.3
+npm error Invalid: lock file's content-disposition@1.0.0 does not satisfy content-disposition@0.5.4
+npm error Invalid: lock file's cookie-signature@1.2.2 does not satisfy cookie-signature@1.0.6
+npm error Missing: debug@2.6.9 from lock file
+npm error Invalid: lock file's finalhandler@2.1.0 does not satisfy finalhandler@1.3.1
+npm error Invalid: lock file's fresh@2.0.0 does not satisfy fresh@0.5.2
+npm error Invalid: lock file's merge-descriptors@2.0.0 does not satisfy merge-descriptors@1.0.3
+npm error Invalid: lock file's path-to-regexp@8.2.0 does not satisfy path-to-regexp@0.1.12
+npm error Invalid: lock file's qs@6.14.0 does not satisfy qs@6.13.0
+npm error Invalid: lock file's send@1.2.0 does not satisfy send@0.19.0
+npm error Invalid: lock file's serve-static@2.2.0 does not satisfy serve-static@1.16.2
+npm error Invalid: lock file's statuses@2.0.2 does not satisfy statuses@2.0.1
+npm error Invalid: lock file's type-is@2.0.1 does not satisfy type-is@1.6.18
+npm error Invalid: lock file's negotiator@1.0.0 does not satisfy negotiator@0.6.3
+npm error Missing: debug@2.6.9 from lock file
+npm error Invalid: lock file's iconv-lite@0.6.3 does not satisfy iconv-lite@0.4.24
+npm error Invalid: lock file's raw-body@3.0.0 does not satisfy raw-body@2.5.2
+npm error Missing: debug@2.6.9 from lock file
+npm error Missing: @types/express@4.17.3 from lock file
+npm error Invalid: lock file's concat-stream@2.0.0 does not satisfy concat-stream@1.6.2
+npm error Missing: readable-stream@2.3.8 from lock file
+npm error Missing: @types/node@18.19.115 from lock file
+npm error Missing: @types/node-fetch@2.6.12 from lock file
+npm error Missing: agentkeepalive@4.6.0 from lock file
+npm error Missing: form-data-encoder@1.7.2 from lock file
+npm error Missing: formdata-node@4.4.1 from lock file
+npm error Missing: form-data@4.0.3 from lock file
+npm error Missing: humanize-ms@1.2.1 from lock file
+npm error Missing: node-domexception@1.0.0 from lock file
+npm error Missing: web-streams-polyfill@4.0.0-beta.3 from lock file
+npm error Missing: debug@2.6.9 from lock file
+npm error Missing: encodeurl@1.0.2 from lock file
+npm error Missing: mime@1.6.0 from lock file
+npm error Invalid: lock file's media-typer@1.1.0 does not satisfy media-typer@0.3.0
+npm error Missing: ms@2.0.0 from lock file
+npm error Missing: core-util-is@1.0.3 from lock file
+npm error Missing: isarray@1.0.0 from lock file
+npm error Missing: process-nextick-args@2.0.1 from lock file
+npm error Missing: safe-buffer@5.1.2 from lock file
+npm error Missing: string_decoder@1.1.1 from lock file
+npm error Missing: ms@2.0.0 from lock file
+npm error Missing: ms@2.0.0 from lock file
+npm error Missing: undici-types@5.26.5 from lock file
+npm error Missing: ms@2.0.0 from lock file
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2025-07-02T10_32_55_951Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/5a9337ee-b9b0-47d0-9c9b-c028f9cb61b6?project=595715296273.
+
+Functions deploy had errors with the following functions:
+        chartmindApi(us-central1)
+        chartmindHealth(us-central1)
+
+Because there were errors creating or updating functions, the following functions were not deleted
+        processAudio(us-central1)
+To delete these, use firebase functions:delete
+Error: There was an error deploying functions:
+- Error Failed to create function chartmindApi in region us-central1
+- Error Failed to delete function processAudio in region us-central1
+- Error Failed to create function chartmindHealth in region us-central1
+
+C:\Apps\ChartMind-Simple>cd functions
+
+C:\Apps\ChartMind-Simple\functions>del package-lock.json
+
+C:\Apps\ChartMind-Simple\functions>npm install
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: undefined,
+npm warn EBADENGINE   required: { node: '18' },
+npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+npm warn deprecated multer@1.4.5-lts.2: Multer 1.x is impacted by a number of vulnerabilities, which have been patched in 2.x. You should upgrade to the latest 2.x version.
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 27 packages, removed 284 packages, changed 22 packages, and audited 354 packages in 9s
+
+51 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Apps\ChartMind-Simple\functions>cd ..
+
+C:\Apps\ChartMind-Simple>firebase deploy
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions, hosting
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8634
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Simple\functions (47.51 KB) for uploading
+i  functions: ensuring required API run.googleapis.com is enabled...
+i  functions: ensuring required API eventarc.googleapis.com is enabled...
+i  functions: ensuring required API pubsub.googleapis.com is enabled...
+i  functions: ensuring required API storage.googleapis.com is enabled...
+i  functions: generating the service identity for pubsub.googleapis.com...
+i  functions: generating the service identity for eventarc.googleapis.com...
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
+i  functions: ensuring 595715296273-compute@developer.gserviceaccount.com access to secret OPENAI_API_KEY.
++  secretmanager: Granted roles/secretmanager.secretAccessor on projects/chartmind-67993/secrets/OPENAI_API_KEY to 595715296273-compute@developer.gserviceaccount.com
++  functions: ensured 595715296273-compute@developer.gserviceaccount.com access to OPENAI_API_KEY.
++  functions: functions folder uploaded successfully
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+
+The following functions are found in your project but do not exist in your local source code:
+        processAudio(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
+√ Would you like to proceed with deletion? Selecting no will continue the rest of the deployments. Yes
+i  functions: updating Node.js 18 (2nd Gen) function chartmindApi(us-central1)...
+i  functions: updating Node.js 18 (2nd Gen) function chartmindHealth(us-central1)...
++  functions[chartmindApi(us-central1)] Successful update operation.
+i  functions: deleting Node.js 18 (1st Gen) function processAudio(us-central1)...
++  functions[chartmindHealth(us-central1)] Successful update operation.
++  functions[processAudio(us-central1)] Successful delete operation.
+Function URL (chartmindApi(us-central1)): https://chartmindapi-g2edl2gvwq-uc.a.run.app
+Function URL (chartmindHealth(us-central1)): https://chartmindhealth-g2edl2gvwq-uc.a.run.app
+i  hosting[chartmind-67993]: finalizing version...
++  hosting[chartmind-67993]: version finalized
+i  hosting[chartmind-67993]: releasing new version...
++  hosting[chartmind-67993]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+Hosting URL: https://chartmind-67993.web.app
+
+C:\Apps\ChartMind-Simple>firebase functions:list
+┌─────────────────┬─────────┬─────────┬─────────────┬────────┬──────────┐
+│ Function        │ Version │ Trigger │ Location    │ Memory │ Runtime  │
+├─────────────────┼─────────┼─────────┼─────────────┼────────┼──────────┤
+│ chartmindApi    │ v2      │ https   │ us-central1 │ 1024   │ nodejs18 │
+├─────────────────┼─────────┼─────────┼─────────────┼────────┼──────────┤
+│ chartmindHealth │ v2      │ https   │ us-central1 │ 256    │ nodejs18 │
+└─────────────────┴─────────┴─────────┴─────────────┴────────┴──────────┘
+
+C:\Apps\ChartMind-Simple>firebase deploy --only functions
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8484
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Simple\functions (47.74 KB) for uploading
+i  functions: ensuring required API run.googleapis.com is enabled...
+i  functions: ensuring required API eventarc.googleapis.com is enabled...
+i  functions: ensuring required API pubsub.googleapis.com is enabled...
+i  functions: ensuring required API storage.googleapis.com is enabled...
+i  functions: generating the service identity for pubsub.googleapis.com...
+i  functions: generating the service identity for eventarc.googleapis.com...
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
++  functions: functions folder uploaded successfully
+i  functions: updating Node.js 18 (2nd Gen) function chartmindApi(us-central1)...
+i  functions: updating Node.js 18 (2nd Gen) function chartmindHealth(us-central1)...
++  functions[chartmindHealth(us-central1)] Successful update operation.
++  functions[chartmindApi(us-central1)] Successful update operation.
+Function URL (chartmindApi(us-central1)): https://chartmindapi-g2edl2gvwq-uc.a.run.app
+Function URL (chartmindHealth(us-central1)): https://chartmindhealth-g2edl2gvwq-uc.a.run.app
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+
+C:\Apps\ChartMind-Simple>firebase functions:config:set cors.origin="*"
++  Functions config updated.
+
+Please deploy your functions for the change to take effect by running firebase deploy --only functions
+
+
+C:\Apps\ChartMind-Simple>firebase deploy --only functions
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8642
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Simple\functions (47.74 KB) for uploading
+i  functions: ensuring required API run.googleapis.com is enabled...
+i  functions: ensuring required API eventarc.googleapis.com is enabled...
+i  functions: ensuring required API pubsub.googleapis.com is enabled...
+i  functions: ensuring required API storage.googleapis.com is enabled...
+i  functions: generating the service identity for pubsub.googleapis.com...
+i  functions: generating the service identity for eventarc.googleapis.com...
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
+i  functions: Skipping the deploy of unchanged functions.
++  functions[chartmindApi(us-central1)] Skipped (No changes detected)
++  functions[chartmindHealth(us-central1)] Skipped (No changes detected)
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+
+C:\Apps\ChartMind-Simple>gcloud functions add-iam-policy-binding chartmindHealth --region=us-central1 --member="allUsers" --role="roles/cloudfunctions.invoker"
+'gcloud' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Apps\ChartMind-Simple>gcloud functions add-iam-policy-binding chartmindApi --region=us-central1 --member="allUsers" --role="roles/cloudfunctions.invoker"
+'gcloud' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Apps\ChartMind-Simple>firebase deploy --only functions
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying functions
++  functions: Finished running predeploy script.
+i  functions: preparing codebase default for deployment
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled...
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled...
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled...
+!  functions: Runtime Node.js 18 was deprecated on 2025-04-30 and will be decommissioned on 2025-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy
+!  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+!  functions: Please note that there will be breaking changes when you upgrade.
+i  functions: Loading and analyzing source code for codebase default to determine what to deploy
+Serving at port 8735
+
+i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled...
+i  functions: preparing functions directory for uploading...
+i  functions: packaged C:\Apps\ChartMind-Simple\functions (46.24 KB) for uploading
+i  functions: ensuring required API secretmanager.googleapis.com is enabled...
+i  functions: ensuring chartmind-67993@appspot.gserviceaccount.com access to secret OPENAI_API_KEY.
++  secretmanager: Granted roles/secretmanager.secretAccessor on projects/chartmind-67993/secrets/OPENAI_API_KEY to chartmind-67993@appspot.gserviceaccount.com
++  functions: ensured chartmind-67993@appspot.gserviceaccount.com access to OPENAI_API_KEY.
++  functions: functions folder uploaded successfully
+
+The following functions are found in your project but do not exist in your local source code:
+        chartmindApi(us-central1)
+        chartmindHealth(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
+√ Would you like to proceed with deletion? Selecting no will continue the rest of the deployments. Yes
+i  functions: creating Node.js 18 (1st Gen) function api(us-central1)...
+i  functions: deleting Node.js 18 (2nd Gen) function chartmindApi(us-central1)...
+i  functions: deleting Node.js 18 (2nd Gen) function chartmindHealth(us-central1)...
++  functions[chartmindHealth(us-central1)] Successful delete operation.
++  functions[chartmindApi(us-central1)] Successful delete operation.
++  functions[api(us-central1)] Successful create operation.
+Function URL (api(us-central1)): https://us-central1-chartmind-67993.cloudfunctions.net/api
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+
+C:\Apps\ChartMind-Simple>firebase deploy --only hosting
+
+=== Deploying to 'chartmind-67993'...
+
+i  deploying hosting
+i  hosting[chartmind-67993]: beginning deploy...
+i  hosting[chartmind-67993]: found 1 files in public
++  hosting[chartmind-67993]: file upload complete
+i  hosting[chartmind-67993]: finalizing version...
++  hosting[chartmind-67993]: version finalized
+i  hosting[chartmind-67993]: releasing new version...
++  hosting[chartmind-67993]: release complete
+
++  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/chartmind-67993/overview
+Hosting URL: https://chartmind-67993.web.app
+
+C:\Apps\ChartMind-Simple>firebase functions:log --only api
+2025-07-02T14:39:00.082441Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"98.96.200.72","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T14:39:00.610809Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","request":{"location":"projects/chartmind-67993/locations/us-central1","function":{"labels":{"firebase-functions-hash":"da7cde59f3b9ab9ee4b0e3a87ecb993b57b89408","deployment-tool":"cli-firebase"},"secretEnvironmentVariables":[{"secret":"OPENAI_API_KEY","version":"2","projectId":"chartmind-67993","key":"OPENAI_API_KEY"}],"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/6735528b-b931-43da-a80b-71627fe95cb4.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751468896&Signature=mfQwQSMmuqvMMzlJxEct4fBuAzOIsma9%2FZQwEmCPjC8oqFYZ69UIp3XkxxRFJNzSxuSlnBYyfVvUvg2FtIJpB%2Bx8TI6RZtm2HT38LGt0jYqB9X6k%2F%2FgZDHS%2BBzLszbdX8TFrxpvw3oeDzAwq4BLAU2E0S2lSo7dWjOynB5%2BcCSVesHuM3S%2B%2B%2FjdYP%2FQyeKN1AR4P09TOFVCcik4Ty9bLT2d1L9OOCtGbWB0dMMskwyc31MmWX0JW10CjluqvCtt1tMIXR1SrhtBPhHyF%2Fxs4YXmBp5z923Y%2B%2B8JWO1BYEhFWKCtH%2FO8dq%2B%2FQqDZE0ji9c%2FYj6tbtxngwn2g2vM%2B0Eg%3D%3D","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","entryPoint":"api","name":"projects/chartmind-67993/locations/us-central1/functions/api"},"@type":"type.googleapis.com/google.cloud.functions.v1.CreateFunctionRequest"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:39:00.594864731Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"::1","requestAttributes":{"time":"2025-07-02T14:39:00.152988632Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{"service":"cloudfunctions.googleapis.com","name":"projects/chartmind-67993/locations/us-central1/functions/api","type":"cloudfunctions.googleapis.com/Function"},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","request":{"@type":"type.googleapis.com/google.cloud.functions.v2.CreateFunctionRequest","parent":"projects/chartmind-67993/locations/us-central1","function":{"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"da7cde59f3b9ab9ee4b0e3a87ecb993b57b89408"},"environment":"GEN_1","update_time":{},"service_config":{"secret_environment_variables":[{"project_id":"chartmind-67993","key":"OPENAI_API_KEY","version":"2","secret":"OPENAI_API_KEY"}],"max_instance_request_concurrency":1,"security_level":"SECURE_ALWAYS","revision":"0"},"build_config":{"docker_registry":"ARTIFACT_REGISTRY","source":{},"entry_point":"api","runtime":"nodejs18"},"name":"projects/chartmind-67993/locations/us-central1/functions/api"}},"response":{"@type":"type.googleapis.com/google.longrunning.Operation"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:39:00.621014Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{"time":"2025-07-02T14:40:05.465999Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:40:05.449509Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/api"}
+2025-07-02T14:40:09.002273306Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","response":{"buildConfig":{"entryPoint":"api","source":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/chartmind-67993/serviceAccounts/595715296273-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{},"runtime":"nodejs18"},"url":"https://us-central1-chartmind-67993.cloudfunctions.net/api","state":"ACTIVE","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"da7cde59f3b9ab9ee4b0e3a87ecb993b57b89408"},"environment":"GEN_1","updateTime":"2025-07-02T14:39:00.578048875Z","satisfiesPzi":true,"serviceConfig":{"availableMemory":"256M","ingressSettings":"ALLOW_ALL","revision":"1","maxInstanceRequestConcurrency":1,"securityLevel":"SECURE_ALWAYS","timeoutSeconds":60,"serviceAccountEmail":"chartmind-67993@appspot.gserviceaccount.com","secretEnvironmentVariables":[{"secret":"OPENAI_API_KEY","version":"2","key":"OPENAI_API_KEY","projectId":"595715296273"}],"uri":"https://us-central1-chartmind-67993.cloudfunctions.net/api"},"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/chartmind-67993/locations/us-central1/functions/api"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:40:18.669901Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"98.96.200.72","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T14:40:18.903598Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.SetIamPolicy","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.setIamPolicy","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","request":{"@type":"type.googleapis.com/google.iam.v1.SetIamPolicyRequest","resource":"projects/chartmind-67993/locations/us-central1/functions/api","policy":{"etag":"","bindings":[{"members":["allUsers"],"role":"roles/cloudfunctions.invoker"}]},"updateMask":"bindings,etag,version"},"response":{"bindings":[{"role":"roles/cloudfunctions.invoker","members":["allUsers"]}],"@type":"type.googleapis.com/google.iam.v1.Policy","etag":"BwY48z1qs8Y="},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:40:56.610640160Z D api: Function execution started
+2025-07-02T14:40:56.802988145Z D api: Function execution took 192 ms, finished with status code: 404
+2025-07-02T14:41:55.390144233Z D api: Function execution started
+2025-07-02T14:41:55.397087493Z D api: Function execution took 6 ms, finished with status code: 404
+2025-07-02T14:51:23.311825319Z D api: Function execution started
+2025-07-02T14:51:23.327698296Z D api: Function execution took 15 ms, finished with status code: 500
+2025-07-02T14:51:24.354786Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:51:48.835143093Z D api: Function execution started
+2025-07-02T14:51:48.849708081Z D api: Function execution took 14 ms, finished with status code: 500
+2025-07-02T14:51:49.883987Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:54:17.434325600Z D api: Function execution started
+2025-07-02T14:54:17.444187089Z D api: Function execution took 9 ms, finished with status code: 500
+2025-07-02T14:54:18.454963Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:55:15.610820030Z D api: Function execution started
+2025-07-02T14:55:15.619748339Z D api: Function execution took 8 ms, finished with status code: 500
+2025-07-02T14:55:16.633952Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:57:27.395961335Z D api: Function execution started
+2025-07-02T14:57:27.410075613Z D api: Function execution took 14 ms, finished with status code: 500
+2025-07-02T14:57:28.441211Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+
+C:\Apps\ChartMind-Simple>firebase functions:log --only api
+2025-07-02T14:39:00.082441Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"98.96.200.72","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T14:39:00.610809Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","request":{"location":"projects/chartmind-67993/locations/us-central1","function":{"labels":{"firebase-functions-hash":"da7cde59f3b9ab9ee4b0e3a87ecb993b57b89408","deployment-tool":"cli-firebase"},"secretEnvironmentVariables":[{"secret":"OPENAI_API_KEY","version":"2","projectId":"chartmind-67993","key":"OPENAI_API_KEY"}],"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-230722804591.us-central1.cloudfunctions.appspot.com/6735528b-b931-43da-a80b-71627fe95cb4.zip?GoogleAccessId=service-595715296273@gcf-admin-robot.iam.gserviceaccount.com&Expires=1751468896&Signature=mfQwQSMmuqvMMzlJxEct4fBuAzOIsma9%2FZQwEmCPjC8oqFYZ69UIp3XkxxRFJNzSxuSlnBYyfVvUvg2FtIJpB%2Bx8TI6RZtm2HT38LGt0jYqB9X6k%2F%2FgZDHS%2BBzLszbdX8TFrxpvw3oeDzAwq4BLAU2E0S2lSo7dWjOynB5%2BcCSVesHuM3S%2B%2B%2FjdYP%2FQyeKN1AR4P09TOFVCcik4Ty9bLT2d1L9OOCtGbWB0dMMskwyc31MmWX0JW10CjluqvCtt1tMIXR1SrhtBPhHyF%2Fxs4YXmBp5z923Y%2B%2B8JWO1BYEhFWKCtH%2FO8dq%2B%2FQqDZE0ji9c%2FYj6tbtxngwn2g2vM%2B0Eg%3D%3D","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","entryPoint":"api","name":"projects/chartmind-67993/locations/us-central1/functions/api"},"@type":"type.googleapis.com/google.cloud.functions.v1.CreateFunctionRequest"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:39:00.594864731Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"::1","requestAttributes":{"time":"2025-07-02T14:39:00.152988632Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{"service":"cloudfunctions.googleapis.com","name":"projects/chartmind-67993/locations/us-central1/functions/api","type":"cloudfunctions.googleapis.com/Function"},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","request":{"@type":"type.googleapis.com/google.cloud.functions.v2.CreateFunctionRequest","parent":"projects/chartmind-67993/locations/us-central1","function":{"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"da7cde59f3b9ab9ee4b0e3a87ecb993b57b89408"},"environment":"GEN_1","update_time":{},"service_config":{"secret_environment_variables":[{"project_id":"chartmind-67993","key":"OPENAI_API_KEY","version":"2","secret":"OPENAI_API_KEY"}],"max_instance_request_concurrency":1,"security_level":"SECURE_ALWAYS","revision":"0"},"build_config":{"docker_registry":"ARTIFACT_REGISTRY","source":{},"entry_point":"api","runtime":"nodejs18"},"name":"projects/chartmind-67993/locations/us-central1/functions/api"}},"response":{"@type":"type.googleapis.com/google.longrunning.Operation"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:39:00.621014Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{"time":"2025-07-02T14:40:05.465999Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.create","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:40:05.449509Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/api"}
+2025-07-02T14:40:09.002273306Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","status":{},"authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"requestAttributes":{},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v2.FunctionService.CreateFunction","resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","response":{"buildConfig":{"entryPoint":"api","source":{},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/chartmind-67993/serviceAccounts/595715296273-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{},"runtime":"nodejs18"},"url":"https://us-central1-chartmind-67993.cloudfunctions.net/api","state":"ACTIVE","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"da7cde59f3b9ab9ee4b0e3a87ecb993b57b89408"},"environment":"GEN_1","updateTime":"2025-07-02T14:39:00.578048875Z","satisfiesPzi":true,"serviceConfig":{"availableMemory":"256M","ingressSettings":"ALLOW_ALL","revision":"1","maxInstanceRequestConcurrency":1,"securityLevel":"SECURE_ALWAYS","timeoutSeconds":60,"serviceAccountEmail":"chartmind-67993@appspot.gserviceaccount.com","secretEnvironmentVariables":[{"secret":"OPENAI_API_KEY","version":"2","key":"OPENAI_API_KEY","projectId":"595715296273"}],"uri":"https://us-central1-chartmind-67993.cloudfunctions.net/api"},"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/chartmind-67993/locations/us-central1/functions/api"},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:40:18.669901Z N api: {"@type":"type.googleapis.com/google.cloud.audit.AuditLog","authenticationInfo":{"principalEmail":"rockysai2024@gmail.com","principalSubject":"user:rockysai2024@gmail.com"},"requestMetadata":{"callerIp":"98.96.200.72","callerSuppliedUserAgent":"FirebaseCLI/14.9.0,gzip(gfe),gzip(gfe)","requestAttributes":{"time":"2025-07-02T14:40:18.903598Z","auth":{}},"destinationAttributes":{}},"serviceName":"cloudfunctions.googleapis.com","methodName":"google.cloud.functions.v1.CloudFunctionsService.SetIamPolicy","authorizationInfo":[{"resource":"projects/chartmind-67993/locations/us-central1/functions/api","permission":"cloudfunctions.functions.setIamPolicy","granted":true,"resourceAttributes":{},"permissionType":"ADMIN_WRITE"}],"resourceName":"projects/chartmind-67993/locations/us-central1/functions/api","request":{"@type":"type.googleapis.com/google.iam.v1.SetIamPolicyRequest","resource":"projects/chartmind-67993/locations/us-central1/functions/api","policy":{"etag":"","bindings":[{"members":["allUsers"],"role":"roles/cloudfunctions.invoker"}]},"updateMask":"bindings,etag,version"},"response":{"bindings":[{"role":"roles/cloudfunctions.invoker","members":["allUsers"]}],"@type":"type.googleapis.com/google.iam.v1.Policy","etag":"BwY48z1qs8Y="},"resourceLocation":{"currentLocations":["us-central1"]}}
+2025-07-02T14:40:56.610640160Z D api: Function execution started
+2025-07-02T14:40:56.802988145Z D api: Function execution took 192 ms, finished with status code: 404
+2025-07-02T14:41:55.390144233Z D api: Function execution started
+2025-07-02T14:41:55.397087493Z D api: Function execution took 6 ms, finished with status code: 404
+2025-07-02T14:51:23.311825319Z D api: Function execution started
+2025-07-02T14:51:23.327698296Z D api: Function execution took 15 ms, finished with status code: 500
+2025-07-02T14:51:24.354786Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:51:48.835143093Z D api: Function execution started
+2025-07-02T14:51:48.849708081Z D api: Function execution took 14 ms, finished with status code: 500
+2025-07-02T14:51:49.883987Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:54:17.434325600Z D api: Function execution started
+2025-07-02T14:54:17.444187089Z D api: Function execution took 9 ms, finished with status code: 500
+2025-07-02T14:54:18.454963Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:55:15.610820030Z D api: Function execution started
+2025-07-02T14:55:15.619748339Z D api: Function execution took 8 ms, finished with status code: 500
+2025-07-02T14:55:16.633952Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+2025-07-02T14:57:27.395961335Z D api: Function execution started
+2025-07-02T14:57:27.410075613Z D api: Function execution took 14 ms, finished with status code: 500
+2025-07-02T14:57:28.441211Z E api: Error: Unexpected end of form
+    at Multipart._final (/workspace/node_modules/busboy/lib/types/multipart.js:588:17)
+    at callFinal (node:internal/streams/writable:698:12)
+    at prefinish (node:internal/streams/writable:710:7)
+    at finishMaybe (node:internal/streams/writable:720:5)
+    at Writable.end (node:internal/streams/writable:634:5)
+    at onend (node:internal/streams/readable:748:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+
+C:\Apps\ChartMind-Simple>
